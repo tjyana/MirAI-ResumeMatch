@@ -5,7 +5,7 @@ from src.functions import compare_resume
 
 def main():
     # Title
-    st.sidebar.title("ResumeFit")
+    st.sidebar.title("QualiScreen")
     st.sidebar.write("""Fill in the fields below to compare a resume to a job description.""")
 
     # Input fields
