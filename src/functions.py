@@ -37,21 +37,25 @@ def compare_resume(resume_text, jd_text):
     Warnings:
 
     Candidate information section
+
     Current location:
+
     College degree (Bachelor's or above):
+
     Japanese language ability:
+
     English language ability:
 
     Summary:
     (please give a short summary of candidate persona.
     example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)
 
-    Top 5 Skills and qualifications from resume:
+    Top 3 Skills and qualifications from resume:
     - skill1
     - skill2
     - skill3
     ...
-    5 main skills and qualifications from job description:
+    3 main skills and qualifications from job description:
     - skill1
     - skill2
     - skill3
