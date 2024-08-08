@@ -34,17 +34,16 @@ def compare_resume(resume_text, jd_text):
     ```
     Estimated qualification percentage:
 
+    Candidate Information
+    - Current location of candidate:
+    - College degree (Bachelor's or above):
+    - Japanese language ability:
+    - English language ability:
+
     Warnings:
     (if mandatory qualifications are missing, give a warning here)
     (if no university degree is not listed, give a warning here)
-    (if candidate is outside of Japan, give a warning here
-
-
-    CANDIDATE INFO:
-    Current location of candidate:
-    College degree (Bachelor's or above):
-    Japanese language ability:
-    English language ability:
+    (if candidate is not in Japan, give a warning here)
 
     Summary:
     (please give a short summary of candidate persona.
