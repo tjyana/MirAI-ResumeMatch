@@ -20,12 +20,21 @@ def compare_resume(resume_text, jd_text):
     Compare them to determine any skill gaps and estimate how qualified the individual is for the job.
     Give a percentage estimating how qualified the individual is for the job.
     For candidate information section, please cite any applicable certifications they have.
-    Please penalize heavily for any missing mandatory qualifications and give a score no higher than 40%.
-    If the candidate is missing any mandatory qualifications, please give a warning.
+    Please penalize heavily for any missing mandatory qualifications.
+    If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
+
+    If the candidate fits any of the conditions, please give a warning as being ineligible:
+    - if the candidate is overseas AND has no university degree
+
+    If the candidate fits any of the conditions, please give a warning as being unqualified
+    - if the position requires Japanese language ability AND the candidate has no Japanese language ability
+    - if the position requires English language ability AND the candidate has no English language ability
 
     Output format should be as below, with each section title in large font:
 
     Estimated qualification percentage:
+
+    Warnings:
 
     Candidate information section
     Current location:
@@ -53,13 +62,8 @@ def compare_resume(resume_text, jd_text):
     - skill3
     ...
 
-    If the candidate fits any of the conditions, please give a warning as being ineligible:
-    - if the candidate is overseas AND has no university degree
 
-    If the candidate fits any of the conditions, please give a warning as being unqualified
-    - if the position requires Japanese language ability AND the candidate has no Japanese language ability
-    - if the position requires English language ability AND the candidate has no English language ability
-    - if
+
     """)
 
 
