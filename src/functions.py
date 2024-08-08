@@ -20,7 +20,8 @@ def compare_resume(resume_text, jd_text):
     Compare them to determine any skill gaps and estimate how qualified the individual is for the job.
     Give a percentage estimating how qualified the individual is for the job.
     For candidate information section, please cite any applicable certifications they have.
-    Please penalize heavily for any missing mandatory qualifications and reflect it in the percentage.
+    Please penalize heavily for any missing mandatory qualifications and give a score no higher than 40%.
+    If the candidate is missing any mandatory qualifications, please give a warning.
 
     Output format should be as below, with each section title in large font:
 
