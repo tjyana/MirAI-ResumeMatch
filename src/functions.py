@@ -24,7 +24,7 @@ def compare_resume(resume_text, jd_text):
     If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
 
     If any of the conditionsa are true, please give warnings for the ones that are true:
-    - if candidate is missing mandatory qualifications: "Candidate is missing mandatory qualifications. Please review carefully."
+    - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
     - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
     - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
 
@@ -40,13 +40,10 @@ def compare_resume(resume_text, jd_text):
     (if candidate is outside of Japan, give a warning here
 
 
-
+    CANDIDATE INFO:
     Current location of candidate:
-
     College degree (Bachelor's or above):
-
     Japanese language ability:
-
     English language ability:
 
     Summary:
