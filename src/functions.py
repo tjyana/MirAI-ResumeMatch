@@ -24,7 +24,7 @@ def compare_resume(resume_text, jd_text):
     If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
 
     If the candidate fits any of the conditions, please give a warning as being ineligible:
-    - if the candidate is overseas AND has no university degree
+    - if the candidate is overseas AND has no university degree (if resume does not mention a university degree, assume they don't have one)
 
     If the candidate fits any of the conditions, please give a warning as being unqualified
     - if the position requires Japanese language ability AND the candidate has no Japanese language ability
