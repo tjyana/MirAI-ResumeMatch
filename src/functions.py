@@ -23,13 +23,14 @@ def compare_resume(resume_text, jd_text):
     Please penalize heavily for any missing mandatory qualifications.
     If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
 
-    If any of the conditionsa are true, please give a warning:
+    If any of the conditionsa are true, please give warnings for the ones that are true:
+    - if candidate is missing mandatory qualifications
     - if the candidate has no university degree (if resume does not mention a university degree, assume they don't have one)
     - if the position requires Japanese language ability AND the candidate has no Japanese language ability
     - if the position requires English language ability AND the candidate has no English language ability
-    - if candidate is outside of Japan, please give a warning saying to be cautious of hiring timelines and visa eligibility
+    - if candidate is outside of Japan, please give a warning saying to be cautious of hiring timelines and visa eligibility (assume that their last place of work is their current location)
 
-    Output format should be as below, with each section title in large font:
+    Output format should be as below, with each section title in large font. Please fill in the blanks with the appropriate information:
 
     Estimated qualification percentage:
 
