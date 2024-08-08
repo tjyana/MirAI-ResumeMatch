@@ -19,7 +19,7 @@ def compare_resume(resume_text, jd_text):
     Given the above resume and job description delineated by ```, identify the skills and qualifications from both.
     Compare them to determine any skill gaps and estimate how qualified the individual is for the job.
     Give a percentage estimating how qualified the individual is for the job.
-    For candidate information section, please cite any applicable certifications they have.
+
     Please penalize heavily for any missing mandatory qualifications.
     If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
 
@@ -27,18 +27,21 @@ def compare_resume(resume_text, jd_text):
     - if candidate is missing mandatory qualifications: "Candidate is missing mandatory qualifications. Please review carefully."
     - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
     - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
-    - if the position requires Japanese language ability AND the candidate has no Japanese language ability: "Candidate has no Japanese language ability."
-    - if the position requires English language ability AND the candidate has no English language ability: "Candidate has no English language ability."
 
-    Output format should be as below, with each section title in large font. Please fill in the blanks with the appropriate information:
 
+    Output format should be as below, with each section title in large font. Please fill in the blanks with the appropriate information.
+    OUTPUT FORMAT:
+    ```
     Estimated qualification percentage:
 
     Warnings:
+    (if mandatory qualifications are missing, give a warning here)
+    (if no university degree is not listed, give a warning here)
+    (if candidate is outside of Japan, give a warning here
 
-    Candidate information section
 
-    Current location:
+
+    Current location of candidate:
 
     College degree (Bachelor's or above):
 
@@ -65,7 +68,7 @@ def compare_resume(resume_text, jd_text):
     - skill2
     - skill3
     ...
-
+    ```
 
 
     """)
