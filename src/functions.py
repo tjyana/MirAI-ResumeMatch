@@ -5,24 +5,27 @@ import os
 from openai import OpenAI
 
 # # for testing locally --------------------------------------
-load_dotenv()
+# load_dotenv()
 # goog_api_key = os.getenv('GOOGLE_API_KEY')
-
-
 
 # # for testing on streamlit share -----------------------------
 # goog_api_key = st.secrets['GOOGLE_API_KEY']
 
-# # for testing on streamlit share -----------------------------
-# api_key = st.secrets['OPENAI_API_KEY']
+
+# load_dotenv()
+# api_key = os.getenv('OPENAI_API_KEY')
+
+# for testing on streamlit share -----------------------------
+api_key = st.secrets['OPENAI_API_KEY']
 
 def compare_resume(resume_text, jd_text):
 
     # local
-    client = OpenAI(api_key = os.getenv('OPENAI_API_KEY'))
+    # load_dotenv()
+    # client = OpenAI(api_key = api_key)
 
-    # # streamlit
-    # client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
+    # streamlit
+    client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
 
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
