@@ -20,12 +20,8 @@ api_key = st.secrets['OPENAI_API_KEY']
 
 def compare_resume(resume_text, jd_text):
 
-    # local
-    # load_dotenv()
-    # client = OpenAI(api_key = api_key)
-
     # streamlit
-    client = OpenAI(api_key = st.secrets['OPENAI_API_KEY'])
+    client = OpenAI(api_key=api_key)
 
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -93,6 +89,10 @@ def compare_resume(resume_text, jd_text):
             }
         ]
     )
+
+    print(completion)
+    print(completion.choices[0].message)
+
 
     return completion.choices[0].message
 
