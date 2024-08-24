@@ -50,20 +50,20 @@ def compare_resume(resume_text, jd_text):
                 Output format should be as below, with each section title in large font. Please fill in the blanks with the appropriate information.
                 OUTPUT FORMAT:
                 ```
-                Estimated qualification percentage:
+                ## Estimated qualification percentage:
 
-                Candidate Information
+                ## Candidate Information
                 - Current location of candidate:
                 - College degree (Bachelor's or above):
                 - Japanese language ability:
                 - English language ability:
 
-                Warnings:
+                ## Warnings:
                 (if mandatory qualifications are missing, give a warning here)
                 (if no university degree is not listed, give a warning here)
                 (if candidate is not in Japan, give a warning here)
 
-                Summary:
+                ## Summary:
                 (please give a short summary of candidate persona.
                 example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)
 
