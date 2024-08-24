@@ -1,5 +1,5 @@
-import streamlit as st
-import google.generativeai as genai
+# import streamlit as st
+# import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 from openai import OpenAI
@@ -21,7 +21,7 @@ api_key = st.secrets['OPENAI_API_KEY']
 def compare_resume(resume_text, jd_text):
 
     # streamlit
-    client = OpenAI(api_key=api_key)
+    client = OpenAI()
 
     completion = client.chat.completions.create(
         model="gpt-4o-mini",
@@ -94,7 +94,7 @@ def compare_resume(resume_text, jd_text):
     print(completion.choices[0].message)
 
 
-    return completion.choices[0].message
+    return completion.choices[0].message['content']
 
 
 # def compare_resume(resume_text, jd_text):
