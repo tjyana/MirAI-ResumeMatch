@@ -95,7 +95,7 @@ def compare_resume(resume_text, jd_text):
 
     content = completion.choices[0].message.content
 
-    return st.markdown(content)
+    return content
 
 
 # def compare_resume(resume_text, jd_text):
