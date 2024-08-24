@@ -94,7 +94,7 @@ def compare_resume(resume_text, jd_text):
     print(completion.choices[0].message)
 
 
-    return completion.choices[0].message['content']
+    return completion.choices[0].message
 
 
 # def compare_resume(resume_text, jd_text):
