@@ -27,7 +27,7 @@ def main():
         # Process the inputs
         st.session_state.resume_text = resume_text
         # st.session_state.jd_text = jd_text
-        st.header("You might be a good fit for these jobs:")
+        st.write("You might be a good fit for these jobs:")
         output = match_resume(resume_text)
         process_inputs(output, resume_text)
 
