@@ -1,5 +1,5 @@
 import streamlit as st
-from src.fit_functions import compare_resume, fit_percentage
+from src.fit_functions import match_percentage
 from src.match_functions import match_resume
 from dotenv import load_dotenv
 import re
@@ -28,13 +28,13 @@ def main():
         # Process the inputs
         st.session_state.resume_text = resume_text
         # st.session_state.jd_text = jd_text
-        st.write("You might be a good fit for these jobs:")
         output = match_resume(resume_text)
         process_inputs(resume_text, output)
 
 
 def process_inputs(resume_text, output):
-    results = fit_percentage(resume_text, output)
+    st.write("You might be a good fit for these jobs:")
+    results = match_percentage(resume_text, output)
     st.write(" ", results)
 
     # Function to display the final output:
