@@ -4,3 +4,4 @@ streamlit
 openai
 scikit-learn
 pandas
+sentence-transformers
