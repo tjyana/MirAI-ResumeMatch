@@ -27,7 +27,7 @@ def compare_resume(resume_text, jd_text):
         model="gpt-4o-mini",
         messages=[
             {"role": "system",
-             "content": "You are a HR professional screening resumes."
+             "content": "You are a tech recruiter screening resumes."
             },
             {
                 "role": "user",
@@ -39,7 +39,7 @@ def compare_resume(resume_text, jd_text):
                 Give a percentage estimating how qualified the individual is for the job.
 
                 Please penalize heavily for any missing mandatory qualifications.
-                If the candidate is missing any mandatory qualifications, please score no higher than 40%, and please also give a warning.
+                If the candidate is missing any mandatory qualifications, please also give a warning.
 
                 If any of the conditionsa are true, please give warnings for the ones that are true:
                 - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
@@ -62,21 +62,22 @@ def compare_resume(resume_text, jd_text):
                 (if mandatory qualifications are missing, give a warning here)
                 (if no university degree is not listed, give a warning here)
                 (if candidate is not in Japan, give a warning here)
+                (if no warnings, write "No warnings.")
 
                 ## Summary:
                 (please give a short summary of candidate persona.
                 example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)
 
-                Top 3 Skills and qualifications from resume:
-                - skill1
-                - skill2
-                - skill3
-                ...
-                3 main skills and qualifications from job description:
-                - skill1
-                - skill2
-                - skill3
-                ...
+                # Qualifications:
+                [Qualification 1]: [✅/❌] [What you can tell from the resume]
+                [Qualification 2]: [✅/❌] [What you can tell from the resume]
+                etc.
+
+                # Nice-to-have:
+                [Nice-to-have 1]: [✅/❌] [What you can tell from the resume]
+                [Nice-to-have 2]: [✅/❌] [What you can tell from the resume]
+                etc.
+
                 Skill gaps:
                 - skill1
                 - skill2

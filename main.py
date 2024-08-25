@@ -6,6 +6,10 @@ import os
 # load_dotenv()
 # api_key = os.getenv('OPENAI_API_KEY')
 
+# additional features:
+# job match mode: take resume input > compare to JD database and find best matches
+# pdf upload: upload resume and JD as pdfs
+
 def main():
     # Title
     st.sidebar.title("QualiScreen")
