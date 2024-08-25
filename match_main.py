@@ -38,7 +38,7 @@ def process_inputs(output, resume_text):
 
     for i, job in enumerate(output, 1):
         st.write(f"{i}: {job['Title']}")
-        comparison = compare_resume(resume_text, job['Job Description'])
+        comparison = compare_resume(resume_text, job['Description'])
         pattern = r'Estimated qualification percentage: \d+%'
         match = re.search(pattern, comparison)
         if match:
