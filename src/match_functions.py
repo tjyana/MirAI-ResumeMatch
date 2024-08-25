@@ -1,10 +1,12 @@
+import os
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
 def match_resume(resume_text):
-    df = pd.read_csv('../resume-data/jobs.csv')
+    csv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../resume-data/jobs.csv'))
+    df = pd.read_csv(csv_path)
 
     # Step 1: Load the pre-trained model
     model = SentenceTransformer('all-MiniLM-L6-v2')
