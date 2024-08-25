@@ -28,6 +28,10 @@ def main():
         # st.session_state.jd_text = jd_text
         st.header("You might be a good fit for these jobs:")
         output = match_resume(resume_text)
+
+        for job in output:
+            st.write(f"Title: {job['Title']}")
+            st.write("")
         process_inputs(output)
 
 
