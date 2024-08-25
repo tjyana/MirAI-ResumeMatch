@@ -4,6 +4,29 @@ from dotenv import load_dotenv
 import os
 from openai import OpenAI
 
+'''
+Functions requiring OpenAI API
+
+- compare_resume:
+    - base function
+    - main function for main.py
+    - 1 resume -> 1 job description
+    - compares a resume to a job description and outputs a detailed analysis of the candidate's qualifications
+
+- match_percentage:
+    - main function for match_main.py
+    - 1 resume -> many job descriptions
+    - compares a resume to 3 job descriptions and outputs an estimated qualification percentage for each job
+    - used in a scenario where a candidate is applying to multiple jobs
+
+- fit_sheet:
+    - main function for fit_main.py
+    - many resumes -> 1 job description
+    - compares multiple resumes to a job description and outputs a dataframe with candidate information
+    - used in a scenario where a recruiter is screening multiple resumes
+
+'''
+
 # # for testing locally --------------------------------------
 # load_dotenv()
 # goog_api_key = os.getenv('GOOGLE_API_KEY')

@@ -31,3 +31,7 @@ env/
 # Miscellaneous
 .DS_Store
 Thumbs.db
+
+example.py
+
+notebooks/
