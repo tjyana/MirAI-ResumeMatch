@@ -29,8 +29,8 @@ def main():
         st.header("You might be a good fit for these jobs:")
         output = match_resume(resume_text)
 
-        for job in output:
-            st.write(f"Title: {job['Title']}")
+        for i, job in enumerate(output, 1):
+            st.write(f"{i}: {job['Title']}")
             st.write("")
         process_inputs(output)
 
