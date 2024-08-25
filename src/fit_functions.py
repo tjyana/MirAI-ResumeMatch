@@ -165,7 +165,69 @@ def match_percentage(resume_text, jd_text):
 
 
 
+def fit_sheet(resume_text, jd_text):
 
+    # streamlit
+    client = OpenAI()
+
+    completion = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system",
+             "content": "You are a tech recruiter screening resumes."
+            },
+            {
+                "role": "user",
+                "content": f"""
+                Resume: ```{resume_text}```
+                Job Descriptions: ```{jd_text}```
+
+                You will be given multiple resumes and 1 job description.
+                Please compare each resume to each job description and determine the following:
+                    - Candidate Name
+                    - Location
+                    - Highest education level
+                    - Japanese language ability
+                    - English language ability
+                    - Estimated qualification percentage
+
+                Please use the below grading rubric to determine the estimated qualification percentage:
+                # Qualifications:
+                [✅/❌] [Qualification 1]: [What you can tell from the resume]
+                [✅/❌] [Qualification 2]: [What you can tell from the resume]
+                etc.
+                # Nice-to-have:
+                [✅/❌] [Nice-to-have 1]: [What you can tell from the resume]
+                [✅/❌] [Nice-to-have 2]: [What you can tell from the resume]
+                etc.
+
+
+                FINAL RESPONSE OUTPUT FORMAT:
+                ```
+                Please output a spreadsheet with the following format:
+                - each row should represent a candidate
+                - columns should include the following:
+                    - Candidate Name
+                    - Location
+                    - Highest education level
+                    - Japanese language ability
+                    - English language ability
+                    - Estimated qualification percentage
+
+                Please also output a downloadable link to the spreadsheet.
+                ```
+
+                """
+            }
+        ]
+    )
+
+    print(completion)
+    print(completion.choices[0].message)
+
+    content = completion.choices[0].message.content
+
+    return content
 
 
 
