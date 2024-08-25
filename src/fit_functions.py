@@ -204,7 +204,7 @@ def fit_sheet(resume_text, jd_text):
 
                 FINAL RESPONSE OUTPUT FORMAT:
                 ```
-                Please output a spreadsheet with the following format:
+                Please output a dataframe with the following format:
                 - each row should represent a candidate
                 - columns should include the following:
                     - Candidate Name
