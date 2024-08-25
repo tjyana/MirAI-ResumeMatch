@@ -100,7 +100,7 @@ def compare_resume(resume_text, jd_text):
 
 
 
-def fit_percentage(resume_text, jd_text):
+def match_percentage(resume_text, jd_text):
 
     # streamlit
     client = OpenAI()
@@ -162,6 +162,9 @@ def fit_percentage(resume_text, jd_text):
     content = completion.choices[0].message.content
 
     return content
+
+
+
 
 
 
