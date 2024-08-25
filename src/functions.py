@@ -59,23 +59,23 @@ def compare_resume(resume_text, jd_text):
                 - English language ability:
 
                 ## Warnings:
-                (if mandatory qualifications are missing, give a warning here)
-                (if no university degree is not listed, give a warning here)
-                (if candidate is not in Japan, give a warning here)
-                (if no warnings, write "No warnings.")
+                ⚠️(if mandatory qualifications are missing, give a warning here)
+                ⚠️(if no university degree is not listed, give a warning here)
+                ⚠️(if candidate is not in Japan, give a warning here)
+                ⚠️(if no warnings, write "No warnings.")
 
                 ## Summary:
                 (please give a short summary of candidate persona.
                 example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)
 
                 # Qualifications:
-                [Qualification 1]: [✅/❌] [What you can tell from the resume]
-                [Qualification 2]: [✅/❌] [What you can tell from the resume]
+                [✅/❌][Qualification 1]: [What you can tell from the resume]
+                [✅/❌][Qualification 2]: [What you can tell from the resume]
                 etc.
 
                 # Nice-to-have:
-                [Nice-to-have 1]: [✅/❌] [What you can tell from the resume]
-                [Nice-to-have 2]: [✅/❌] [What you can tell from the resume]
+                [✅/❌][Nice-to-have 1]: [What you can tell from the resume]
+                [✅/❌][Nice-to-have 2]: [What you can tell from the resume]
                 etc.
 
                 Skill gaps:
