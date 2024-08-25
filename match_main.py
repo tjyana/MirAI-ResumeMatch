@@ -4,6 +4,7 @@ from src.match_functions import match_resume
 from dotenv import load_dotenv
 import re
 import os
+import time
 
 # load_dotenv()
 # api_key = os.getenv('OPENAI_API_KEY')
@@ -46,6 +47,7 @@ def process_inputs(output, resume_text):
         else:
             st.write("")
         st.write("")
+        time.sleep(1)
 
 
 
