@@ -3,5 +3,4 @@ python-dotenv
 streamlit
 openai
 scikit-learn
-pytorch
 pandas
