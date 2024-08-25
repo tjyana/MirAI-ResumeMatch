@@ -2,6 +2,7 @@ import streamlit as st
 from src.fit_functions import compare_resume
 from src.match_functions import match_resume
 from dotenv import load_dotenv
+import re
 import os
 
 # load_dotenv()
@@ -28,17 +29,27 @@ def main():
         # st.session_state.jd_text = jd_text
         st.header("You might be a good fit for these jobs:")
         output = match_resume(resume_text)
+        process_inputs(output, resume_text)
 
-        for i, job in enumerate(output, 1):
-            st.write(f"{i}: {job['Title']}")
+
+def process_inputs(output, resume_text):
+    # Function to display the final output:
+    # Top 3 job matches plus estimated qualification percentage
+
+    for i, job in enumerate(output, 1):
+        st.write(f"{i}: {job['Title']}")
+        comparison = compare_resume(resume_text, job['Job Description'])
+        pattern = r'Estimated qualification percentage: \d+%'
+        match = re.search(pattern, comparison)
+        if match:
+            st.write(match.group(0))
+        else:
             st.write("")
-        process_inputs(output)
+        st.write("")
 
 
-def process_inputs(input1):
-    # Function to display the final output
-    # Process the inputs here
-    st.write(" ", input1)
+
+
 
 
 if __name__ == "__main__":
