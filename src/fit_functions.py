@@ -121,7 +121,7 @@ def fit_percentage(resume_text, jd_text):
                 Please compare the resume to each job description and give an estimated qualification percentage for each job.
                 Please penalize heavily for any missing mandatory qualifications.
 
-                Please use the below grading rubric to determine the estimated qualification percentage:
+                Please use the below grading rubric to determine the estimated qualification percentage (do NOT output the rubric in the final response):
 
                 ## Candidate Summary:
                 (summarize candidate's experiences and skills and compare to persona of job description)
@@ -139,7 +139,7 @@ def fit_percentage(resume_text, jd_text):
                 Skill gaps: [consider any notable skill gaps]
 
 
-                OUTPUT FORMAT:
+                FINAL RESPONSE OUTPUT FORMAT:
                 ```
                 ## Job 1: [Job Title 1]
                 Estimated qualification percentage: [percentage]
