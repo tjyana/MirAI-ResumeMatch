@@ -1,5 +1,5 @@
 import streamlit as st
-from src.functions import compare_resume
+from src.fit_functions import compare_resume
 from dotenv import load_dotenv
 import os
 
