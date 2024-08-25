@@ -31,8 +31,8 @@ def main():
 def process_inputs(input1):
     # Function to display the final output
     # Process the inputs here
-    st.dataframe(" ", input1)
-    # st.table(" ", input1)
+    # st.dataframe(" ", input1)
+    st.table(" ", input1)
 
 
 if __name__ == "__main__":
