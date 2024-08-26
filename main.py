@@ -1,22 +1,34 @@
 import streamlit as st
 from src.fit_functions import compare_resume
-from dotenv import load_dotenv
-import os
+from src.st_functions import read_resume
 
-# load_dotenv()
-# api_key = os.getenv('OPENAI_API_KEY')
 
-# additional features:
-# job match mode: take resume input > compare to JD database and find best matches
-# pdf upload: upload resume and JD as pdfs
 
 def main():
     # Title
-    st.sidebar.title("QualiScreen")
-    st.sidebar.write("""Fill in the fields below to compare a resume to a job description.""")
+    st.sidebar.title("ResumeMatch")
+    st.sidebar.write("""Compare a resume to a job description.""")
 
-    # Input fields
-    resume_text = st.sidebar.text_area("Resume Information", height=200)
+    '''
+    Input Fields
+    '''
+    # Resume
+    # resume_text = st.sidebar.text_area("Resume Information", height=200)
+
+    # Select input method: Copy and paste text or upload a file
+    resume_method = st.sidebar.radio("""Choose an input method:""", ("Text", "File"))
+
+    # Input: Text
+    if resume_method == "Text":
+        resume_text = st.sidebar.text_area("Resume Text", height=200)
+
+    # Input: File Upload
+    elif resume_method == "File":
+        resume_file = st.sidebar.file_uploader("Choose a PDF or DOC file", type=["pdf", "docx", "txt"])
+        resume_text = read_resume(resume_file)
+        print('resume_file:', resume_file)
+
+    # Input: Job Description
     jd_text = st.sidebar.text_area("Job Description", height=200)
 
     # Submit button
