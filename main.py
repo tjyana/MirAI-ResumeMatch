@@ -16,7 +16,7 @@ def main():
     # resume_text = st.sidebar.text_area("Resume Information", height=200)
 
     # Select input method: Copy and paste text or upload a file
-    resume_method = st.sidebar.radio("""Choose an input method:""", ("Text", "File"))
+    resume_method = st.sidebar.radio("""Choose an input method:""", ("File", "Text"), horizontal = True)
 
     # Input: Text
     if resume_method == "Text":
