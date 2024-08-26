@@ -65,7 +65,10 @@ def compare_resume(resume_text, jd_text):
                 - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
 
 
-                Output format should be as below, with each section title in large font. Please fill in the blanks with the appropriate information.
+                Output format should be as below, with each section title in large font.
+                Please fill in the blanks with the appropriate information.
+                Please use new lines appropriately like in the format below.
+
                 OUTPUT FORMAT:
                 ```
 
@@ -90,14 +93,14 @@ def compare_resume(resume_text, jd_text):
                 example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)
 
                 ### Qualifications:
-                [✅/❌] [Qualification 1]: [What you can tell from the resume]
-                [✅/❌] [Qualification 2]: [What you can tell from the resume]
-                etc.
+                [✅/❌] [Qualification 1]: [What you can tell from the resume]  \n
+                [✅/❌] [Qualification 2]: [What you can tell from the resume]  \n
+                etc.  \n
 
                 ### Nice-to-have:
-                [✅/❌] [Nice-to-have 1]: [What you can tell from the resume]
-                [✅/❌] [Nice-to-have 2]: [What you can tell from the resume]
-                etc.
+                [✅/❌] [Nice-to-have 1]: [What you can tell from the resume]  \n
+                [✅/❌] [Nice-to-have 2]: [What you can tell from the resume]  \n
+                etc.  \n
 
                 ### Skill gaps:
                 [write any notable skill gaps here]
