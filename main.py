@@ -43,6 +43,7 @@ def main():
             process_inputs(output)
         elif resume_method == "File":
             resume_text = read_resume(resume_file)
+            st.write("Resume Text:", resume_text)
             output = compare_resume(resume_text, jd_text)
             process_inputs(output)
 
@@ -50,7 +51,7 @@ def main():
 def process_inputs(input1):
     # Function to display the final output
     # Process the inputs here
-    st.write(" ", input1)
+    st.markdown(" ", input1)
 
 
 if __name__ == "__main__":
