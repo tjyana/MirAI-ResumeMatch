@@ -9,9 +9,9 @@ def main():
     st.sidebar.title("ResumeMatch")
     st.sidebar.write("""Compare a resume to a job description.""")
 
-    '''
-    Input Fields
-    '''
+
+    # Input Fields
+
     # Resume
     # resume_text = st.sidebar.text_area("Resume Information", height=200)
 
@@ -34,8 +34,8 @@ def main():
     # Submit button
     if st.sidebar.button("Submit"):
         # Process the inputs
-        st.session_state.resume_text = resume_text
-        st.session_state.jd_text = jd_text
+        # st.session_state.resume_text = resume_text
+        # st.session_state.jd_text = jd_text
         st.header("Match Results")
 
         if resume_method == "Text":
