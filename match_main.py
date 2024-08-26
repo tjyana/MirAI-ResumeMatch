@@ -17,7 +17,7 @@ import time
 def main():
     # Title
     st.sidebar.title("ResumeMatch")
-    st.sidebar.write("""Fill in your resume info to see which job matches you best.""")
+    st.sidebar.write("""Fill in your resume info to see which Money Forward job matches you best.""")
 
     # Input fields
     resume_text = st.sidebar.text_area("Resume Information", height=200)
