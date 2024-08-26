@@ -51,7 +51,7 @@ def main():
 def process_inputs(input1):
     # Function to display the final output
     # Process the inputs here
-    st.markdown(" ", input1)
+    st.markdown(input1)
 
 
 if __name__ == "__main__":
