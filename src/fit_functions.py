@@ -162,7 +162,6 @@ def compare_resume(resume_text, jd_text):
 
                 OUTPUT FORMAT:
 
-                ```
                 <h2>Candidate Information</h2>
                 <ul>
                     <li>Current location:</li>
@@ -202,7 +201,7 @@ def compare_resume(resume_text, jd_text):
 
                 <h3>Skill gaps:</h3>
                 <p>[write any notable skill gaps here]</p>
-                ```
+
 
 
                 """

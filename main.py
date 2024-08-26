@@ -45,6 +45,7 @@ def main():
             resume_text = read_resume(resume_file)
 
             output = compare_resume(resume_text, jd_text)
+            print(output)
             st.write("output:", output)
             process_inputs(output)
 
@@ -52,7 +53,7 @@ def main():
 def process_inputs(input1):
     # Function to display the final output
     # Process the inputs here
-    st.markdown(input1)
+    st.markdown(input1, unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
