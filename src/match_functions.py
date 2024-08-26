@@ -3,7 +3,10 @@ import pandas as pd
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# BERT model to match resume to job descriptions
+'''
+BERT model to match resume to job descriptions
+Separate file for this function because of size of imports and dependencies
+'''
 
 def match_resume(resume_text):
     csv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../resume-data/jobs.csv'))
