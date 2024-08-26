@@ -43,8 +43,9 @@ def main():
             process_inputs(output)
         elif resume_method == "File":
             resume_text = read_resume(resume_file)
-            st.write("Resume Text:", resume_text)
+
             output = compare_resume(resume_text, jd_text)
+            st.write("output:", output)
             process_inputs(output)
 
 
