@@ -25,7 +25,7 @@ def main():
     # Input: File Upload
     elif resume_method == "File":
         resume_file = st.sidebar.file_uploader("Choose a PDF or DOC file", type=["pdf", "docx", "txt"])
-        resume_text = read_resume(resume_file)
+
         print('resume_file:', resume_file)
 
     # Input: Job Description
@@ -36,9 +36,15 @@ def main():
         # Process the inputs
         st.session_state.resume_text = resume_text
         st.session_state.jd_text = jd_text
-        st.header("Fit Score")
-        output = compare_resume(resume_text, jd_text)
-        process_inputs(output)
+        st.header("Match Results")
+
+        if resume_method == "Text":
+            output = compare_resume(resume_text, jd_text)
+            process_inputs(output)
+        elif resume_method == "File":
+            resume_text = read_resume(resume_file)
+            output = compare_resume(resume_text, jd_text)
+            process_inputs(output)
 
 
 def process_inputs(input1):
