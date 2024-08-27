@@ -16,7 +16,7 @@ def main():
     ###Compare a resume to a job description.
     '''
 
-    st.markdown(title, unsafe_allow_html=True)
+    st.sidebar.markdown(title, unsafe_allow_html=True)
 
     # Input Fields
 
