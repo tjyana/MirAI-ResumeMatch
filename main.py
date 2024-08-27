@@ -10,17 +10,17 @@ def main():
     # st.sidebar.title("ResumeMatch")
     # st.sidebar.subheader("""Compare a resume to a job description.""")
 
-    # title = '''
-    # [MirAI Fest Entry]
-    # # :orange[ResumeMatch]✅
-    # ### Compare a resume to a job description!
-    # '''
-
     title = '''
-    <p><strong>[MirAI Fest Entry]</strong></p>
-    <p><h1>ResumeMatch✅</h1></p>
-    <h4>Compare a resume to a job description!</h4>
+    [MirAI Fest Entry]
+    # :orange[ResumeMatch]✅
+    ### Compare a resume to a job description!
     '''
+
+    # title = '''
+    # <p><strong>[MirAI Fest Entry]</strong></p>
+    # <p><h1>ResumeMatch✅</h1></p>
+    # <h4>Compare a resume to a job description!</h4>
+    # '''
 
     st.sidebar.markdown(title, unsafe_allow_html=True)
 
