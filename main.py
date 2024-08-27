@@ -9,7 +9,6 @@ def main():
     st.sidebar.title("ResumeMatch")
     st.sidebar.write("""Compare a resume to a job description.""")
 
-
     # Input Fields
 
     # Resume
@@ -20,17 +19,16 @@ def main():
 
     # Input: Text
     if resume_method == "Text":
-        resume_text = st.sidebar.text_area("Resume Text", height=200)
-
+        resume_text = st.sidebar.text_area("Paste Resume text here", height=200)
     # Input: File Upload
     elif resume_method == "File":
-        resume_file = st.sidebar.file_uploader("Choose a PDF or DOC file", type=["pdf", "docx", "txt"])
+        resume_file = st.sidebar.file_uploader("Upload here", type=["pdf", "docx", "txt"])
 
         print('resume_file:', resume_file)
 
     # Input: Job Description
     st.sidebar.header("Job Description")
-    jd_text = st.sidebar.text_area("Copy and paste here", height=200)
+    jd_text = st.sidebar.text_area("Paste JD text here", height=200)
 
     # Submit button
     if st.sidebar.button("Submit"):
@@ -50,7 +48,6 @@ def main():
 
 def process_inputs(input1):
     # Function to display the final output
-    # Process the inputs here
     st.markdown(input1, unsafe_allow_html=True)
 
 
