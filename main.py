@@ -5,9 +5,18 @@ from src.st_functions import read_resume
 
 
 def main():
-    # Title
-    st.sidebar.title("ResumeMatch")
-    st.sidebar.subheader("""Compare a resume to a job description.""")
+    # # Title
+    # st.sidebar.write('[MirAI Fest Entry]')
+    # st.sidebar.title("ResumeMatch")
+    # st.sidebar.subheader("""Compare a resume to a job description.""")
+
+    title = '''
+    [MirAI Fest Entry]
+    #ResumeMatch
+    ###Compare a resume to a job description.
+    '''
+
+    st.markdown(title, unsafe_allow_html=True)
 
     # Input Fields
 
