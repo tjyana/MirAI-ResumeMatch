@@ -18,7 +18,7 @@ def main():
 
     title = '''
     <p><strong>[MirAI Fest Entry]</strong></p>
-    <title><p style="background-color: orange; display: inline-block;">ResumeMatch✅</p></title>
+    <p><title>ResumeMatch✅</title></p>
     <br><h4>Compare a resume to a job description!</h4></br>
     '''
 
