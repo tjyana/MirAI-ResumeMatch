@@ -1,5 +1,10 @@
 import pdfplumber
 
+'''
+PDFPlumber is a Python library that extracts text, tables, and images from PDF files.
+read_resume function reads the resume file and extracts text from it.
+'''
+
 def read_resume(file):
     if file.type == "text/plain":
         # Read text file
