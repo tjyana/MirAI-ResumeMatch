@@ -13,7 +13,7 @@ def main():
     # Input Fields
 
     # Resume
-    # resume_text = st.sidebar.text_area("Resume Information", height=200)
+    st.sidebar.header("Resume")
 
     # Select input method: Copy and paste text or upload a file
     resume_method = st.sidebar.radio("""Choose resume input method:""", ("File", "Text"), horizontal = True)
@@ -29,7 +29,8 @@ def main():
         print('resume_file:', resume_file)
 
     # Input: Job Description
-    jd_text = st.sidebar.text_area("Job Description", height=200)
+    st.sidebar.header("Job Description")
+    jd_text = st.sidebar.text_area("Copy and paste here", height=200)
 
     # Submit button
     if st.sidebar.button("Submit"):
