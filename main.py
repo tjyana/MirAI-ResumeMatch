@@ -12,14 +12,14 @@ def main():
 
     # title = '''
     # [MirAI Fest Entry]
-    # # :orange-background[ResumeMatch]✅
+    # # :orange[ResumeMatch]✅
     # ### Compare a resume to a job description!
     # '''
 
     title = '''
     <p><strong>[MirAI Fest Entry]</strong></p>
-    <p style="background-color: orange; display: inline-block;"><title>ResumeMatch✅</title></p>
-    <p><h4>Compare a resume to a job description!</h4></p>
+    <title><p style="background-color: orange; display: inline-block;">ResumeMatch✅</p></title>
+    <br><h4>Compare a resume to a job description!</h4></br>
     '''
 
     st.sidebar.markdown(title, unsafe_allow_html=True)
