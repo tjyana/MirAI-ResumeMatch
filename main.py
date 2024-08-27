@@ -11,9 +11,9 @@ def main():
     # st.sidebar.subheader("""Compare a resume to a job description.""")
 
     title = '''
-    [MirAI Fest Entry]
-    #ResumeMatch
-    ###Compare a resume to a job description.
+    [MirAI Fest Entry] \n
+    # ResumeMatch \n
+    ### Compare a resume to a job description.
     '''
 
     st.sidebar.markdown(title, unsafe_allow_html=True)
@@ -24,7 +24,7 @@ def main():
     st.sidebar.header("Resume")
 
     # Select input method: Copy and paste text or upload a file
-    resume_method = st.sidebar.radio("""Choose resume input method:""", ("File", "Text"), horizontal = True)
+    resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
 
     # Input: Text
     if resume_method == "Text":
