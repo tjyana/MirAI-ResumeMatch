@@ -1,5 +1,5 @@
 import streamlit as st
-from src.fit_functions import compare_resume
+from src.resumematch_functions import compare_resume
 from src.st_functions import read_resume
 
 
