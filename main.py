@@ -18,8 +18,8 @@ def main():
 
     title = '''
     <p><strong>[MirAI Fest Entry]</strong></p>
-    <p style="background-color: orange; display: inline-block;"># ResumeMatch ✅</p>
-    <p>### Compare a resume to a job description!</p>
+    <p style="background-color: orange; display: inline-block;"><title>ResumeMatch✅</title></p>
+    <p><h4>Compare a resume to a job description!</h4></p>
     '''
 
     st.sidebar.markdown(title, unsafe_allow_html=True)
