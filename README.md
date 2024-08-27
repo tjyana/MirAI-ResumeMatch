@@ -1,4 +1,5 @@
 
+[MirAI Fest Submission]
 # ResumeMatch
 **An AI-powered HR tool for faster and safer resume screenings!**
 
@@ -8,7 +9,7 @@ ResumeMatch simplifies the hiring process by comparing a resume to a job descrip
 - **Overall Comparison Analysis:** A detailed analysis highlighting key points.
 - **Basic Candidate Information:** Essential details extracted from the resume.
 - **Warnings:** Alerts for potential issues or things to double-check.
-- **Qualifications Comparison Checklist:** A side-by-side comparison of candidate qualifications vs. job requirements.
+- **Qualifications Comparison Checklist:** A comparison of candidate qualifications vs. job requirements.
 
 ## How to Use
 
