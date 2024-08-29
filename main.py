@@ -1,50 +1,52 @@
 import streamlit as st
 from src.resumematch_functions import compare_resume
-from src.st_functions import read_resume
+from src.st_functions import read_resume, language_options, UI, resume_input, jd_input, submit_button
 
 
 
 def main():
 
+    UI()
+    resume_text = resume_input()
+    jd_text = jd_input()
+    submit_button(resume_text, jd_text)
 
 
-    # Title
-    title = '''
-    [MirAI Fest Entry]
-    # :orange[ResumeMatch]✅
-    ### Compare a resume to a job description!
-    '''
-    st.sidebar.markdown(title, unsafe_allow_html=True)
 
-    # Resume
-    st.sidebar.header("Resume")
 
-    # Select input method: Copy and paste text or upload a file
-    resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
+    # # Title
+    # title = '''
+    # [MirAI Fest Entry]
+    # # :orange[ResumeMatch]✅
+    # ### Compare a resume to a job description!
+    # '''
+    # st.sidebar.markdown(title, unsafe_allow_html=True)
 
-    # Input: Text
-    if resume_method == "Text":
-        resume_text = st.sidebar.text_area("Paste Resume text", height=200)
-    # Input: File Upload
-    elif resume_method == "File":
-        resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
-        if resume_file:
-            resume_text = read_resume(resume_file)
+    # # Resume
+    # st.sidebar.header("Resume")
 
-    # Input: Job Description
-    st.sidebar.header("Job Description")
-    jd_text = st.sidebar.text_area("Paste JD text", height=200)
+    # # Select input method: Copy and paste text or upload a file
+    # resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
 
-    # Submit button
-    if st.sidebar.button("Submit"):
-        st.header("Match Results")
-        # if resume_method == "Text":
-        output = compare_resume(resume_text, jd_text)
-        process_inputs(output)
-        # elif resume_method == "File":
-        #     # resume_text = read_resume(resume_file)
-        #     output = compare_resume(resume_text, jd_text)
-        #     process_inputs(output)
+    # # Input: Text
+    # if resume_method == "Text":
+    #     resume_text = st.sidebar.text_area("Paste Resume text", height=200)
+    # # Input: File Upload
+    # elif resume_method == "File":
+    #     resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
+    #     if resume_file:
+    #         resume_text = read_resume(resume_file)
+
+    # # Input: Job Description
+    # st.sidebar.header("Job Description")
+    # jd_text = st.sidebar.text_area("Paste JD text", height=200)
+
+    # # Submit button
+    # if st.sidebar.button("Submit"):
+    #     st.header("Match Results")
+    #     output = compare_resume(resume_text, jd_text)
+    #     process_inputs(output)
+
 
 
 def process_inputs(input1):
