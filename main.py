@@ -5,26 +5,16 @@ from src.st_functions import read_resume
 
 
 def main():
-    # # Title
-    # st.sidebar.write('[MirAI Fest Entry]')
-    # st.sidebar.title("ResumeMatch")
-    # st.sidebar.subheader("""Compare a resume to a job description.""")
 
+
+
+    # Title
     title = '''
     [MirAI Fest Entry]
     # :orange[ResumeMatch]✅
     ### Compare a resume to a job description!
     '''
-
-    # title = '''
-    # <p><strong>[MirAI Fest Entry]</strong></p>
-    # <p><h1>ResumeMatch✅</h1></p>
-    # <h4>Compare a resume to a job description!</h4>
-    # '''
-
     st.sidebar.markdown(title, unsafe_allow_html=True)
-
-    # Input Fields
 
     # Resume
     st.sidebar.header("Resume")
@@ -38,8 +28,8 @@ def main():
     # Input: File Upload
     elif resume_method == "File":
         resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
-
-        print('resume_file:', resume_file)
+        if resume_file:
+            resume_text = read_resume(resume_file)
 
     # Input: Job Description
     st.sidebar.header("Job Description")
@@ -47,11 +37,7 @@ def main():
 
     # Submit button
     if st.sidebar.button("Submit"):
-        # Process the inputs
-        # st.session_state.resume_text = resume_text
-        # st.session_state.jd_text = jd_text
         st.header("Match Results")
-
         if resume_method == "Text":
             output = compare_resume(resume_text, jd_text)
             process_inputs(output)
