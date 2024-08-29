@@ -1,6 +1,6 @@
 import pdfplumber
 import streamlit as st
-from src.resumematch_functions import compare_resume, JP_compare_resume
+from src.resumematch_functions import compare_resume
 
 
 def read_resume(file):
@@ -69,6 +69,11 @@ def jd_input():
     st.sidebar.header("Job Description")
     jd_text = st.sidebar.text_area("Paste JD text", height=200)
     return jd_text
+
+
+def process_inputs(input1):
+    # Function to display the final output
+    st.markdown(input1, unsafe_allow_html=True)
 
 
 def submit_button(resume_text, jd_text, language):
