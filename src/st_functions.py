@@ -52,12 +52,13 @@ def resume_input():
     # Input: Text
     if resume_method == "Text":
         resume_text = st.sidebar.text_area("Paste Resume text", height=200)
+        return resume_text
     # Input: File Upload
     elif resume_method == "File":
         resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
         if resume_file:
             resume_text = read_resume(resume_file)
-    return resume_text
+            return resume_text
 
 
 def jd_input():
