@@ -2,37 +2,13 @@ import pdfplumber
 import streamlit as st
 from src.resumematch_functions import compare_resume
 from src.pdf_functions import read_resume
-
-
-
-# def read_resume(file):
-#     '''
-#     PDFPlumber is a Python library that extracts text, tables, and images from PDF files.
-#     read_resume function reads the resume file and extracts text from it.
-#     '''
-#     if file.type == "text/plain":
-#         # Read text file
-#         text = str(file.read(), "utf-8")
-#     elif file.type == "application/pdf":
-#         # Extract text from PDF
-#         with pdfplumber.open(file) as pdf:
-#             text = '\n'.join(page.extract_text() for page in pdf.pages if page.extract_text())
-#     elif file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-#         # Extract text from DOCX
-#         doc = docx.Document(file)
-#         text = '\n'.join(paragraph.text for paragraph in doc.paragraphs if paragraph.text)
-#     else:
-#         text = "Unsupported file type"
-#     return text
-
+from src.scraper_jdpage import scrape_jd
 
 
 def language_options():
     language = st.sidebar.radio(" ", ['日本語', 'English'], horizontal = True)
     return language
 
-
-# main() broken down into smaller functions
 
 # English version
 # ------------------------------------------------------
@@ -69,8 +45,18 @@ def resume_input():
 def jd_input():
     # Input: Job Description
     st.sidebar.header("Job Description")
-    jd_text = st.sidebar.text_area("Paste JD text", height=200)
-    return jd_text
+
+    # Select input method: Copy and paste text or upload a file
+    jd_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
+
+    if jd_method == "Text":
+        jd_text = st.sidebar.text_area("Paste JD text", height=200)
+        return jd_text
+    elif jd_method == "Link":
+        jd_link = st.sidebar.text_area("Paste JD link")
+        if jd_link:
+            jd_text = scrape_jd(jd_link)
+            return jd_text
 
 
 def submit_button(resume_text, jd_text, language):
