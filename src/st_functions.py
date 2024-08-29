@@ -1,5 +1,6 @@
 import pdfplumber
 import streamlit as st
+from src.resumematch_functions import compare_resume, JP_compare_resume
 
 
 def read_resume(file):
