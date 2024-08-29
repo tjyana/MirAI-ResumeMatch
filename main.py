@@ -21,7 +21,7 @@ def main():
         JP_UI()
         resume_text = JP_resume_input()
         jd_text = JP_jd_input()
-        JP_submit_button(resume_text, jd_text)
+        JP_submit_button(resume_text, jd_text, language)
 
 
     # # Title
