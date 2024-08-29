@@ -14,7 +14,7 @@ def main():
         UI()
         resume_text = resume_input()
         jd_text = jd_input()
-        submit_button(resume_text, jd_text)
+        submit_button(resume_text, jd_text, language)
 
     # Japanese version
     if language == '日本語':
