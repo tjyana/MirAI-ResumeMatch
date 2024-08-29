@@ -38,13 +38,13 @@ def main():
     # Submit button
     if st.sidebar.button("Submit"):
         st.header("Match Results")
-        if resume_method == "Text":
-            output = compare_resume(resume_text, jd_text)
-            process_inputs(output)
-        elif resume_method == "File":
-            resume_text = read_resume(resume_file)
-            output = compare_resume(resume_text, jd_text)
-            process_inputs(output)
+        # if resume_method == "Text":
+        output = compare_resume(resume_text, jd_text)
+        process_inputs(output)
+        # elif resume_method == "File":
+        #     # resume_text = read_resume(resume_file)
+        #     output = compare_resume(resume_text, jd_text)
+        #     process_inputs(output)
 
 
 def process_inputs(input1):
