@@ -46,17 +46,17 @@ def jd_input():
     # Input: Job Description
     st.sidebar.header("Job Description")
 
-    # Select input method: Copy and paste text or upload a file
-    jd_method = st.sidebar.radio("""Choose JD input method:""", ("Link", "Text"), horizontal = True)
+    # # Select input method: Copy and paste text or upload a file
+    # jd_method = st.sidebar.radio("""Choose JD input method:""", ("Link", "Text"), horizontal = True)
 
-    if jd_method == "Text":
-        jd_text = st.sidebar.text_area("Paste JD text", height=200)
-        return jd_text
-    elif jd_method == "Link":
-        jd_link = st.sidebar.text_area("Paste JD link")
-        if jd_link:
-            jd_text = scrape_jd(jd_link)
-            return jd_text
+    # if jd_method == "Text":
+    jd_text = st.sidebar.text_area("Paste JD text", height=200)
+    return jd_text
+    # elif jd_method == "Link":
+    #     jd_link = st.sidebar.text_area("Paste JD link")
+    #     if jd_link:
+    #         jd_text = scrape_jd(jd_link)
+    #         return jd_text
 
 
 def submit_button(resume_text, jd_text, language):
