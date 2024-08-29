@@ -12,8 +12,6 @@ def scrape_jd(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    jobs = []
-
     # Find all job entries
     job_description_html = str(soup.find_all('div', class_='pg-main-column cf'))  # Adjust class name as needed
     # Find the position of the phrase "職種 / 募集ポジション"
@@ -28,4 +26,5 @@ def scrape_jd(url):
     # Convert the truncated HTML back to text
     soup_truncated = BeautifulSoup(truncated_description, 'html.parser')
     jd_text = soup_truncated.get_text(separator='\n').strip()
+
     return jd_text
