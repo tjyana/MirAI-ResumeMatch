@@ -6,4 +6,4 @@ scikit-learn
 pandas
 sentence-transformers
 pdfplumber
-BeautifulSoup
+beautifulsoup4
