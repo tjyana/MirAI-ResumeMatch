@@ -1,11 +1,12 @@
 import pdfplumber
+import streamlit as st
 
-'''
-PDFPlumber is a Python library that extracts text, tables, and images from PDF files.
-read_resume function reads the resume file and extracts text from it.
-'''
 
 def read_resume(file):
+    '''
+    PDFPlumber is a Python library that extracts text, tables, and images from PDF files.
+    read_resume function reads the resume file and extracts text from it.
+    '''
     if file.type == "text/plain":
         # Read text file
         text = str(file.read(), "utf-8")
@@ -20,3 +21,55 @@ def read_resume(file):
     else:
         text = "Unsupported file type"
     return text
+
+
+
+def language_options():
+    st.sidebar.header("Select Language:")
+    language = st.sidebar.radio("Language", ['English', '日本語'], horizontal = True)
+    return language
+
+
+# main() broken down into smaller functions
+
+def UI():
+    # Title
+    title = '''
+    [MirAI Fest Entry]
+    # :orange[ResumeMatch]✅
+    ### Compare a resume to a job description!
+    '''
+    st.sidebar.markdown(title, unsafe_allow_html=True)
+
+
+def resume_input():
+    # Input: Resume
+    st.sidebar.header("Resume")
+
+    # Select input method: Copy and paste text or upload a file
+    resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
+
+    # Input: Text
+    if resume_method == "Text":
+        resume_text = st.sidebar.text_area("Paste Resume text", height=200)
+    # Input: File Upload
+    elif resume_method == "File":
+        resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
+        if resume_file:
+            resume_text = read_resume(resume_file)
+    return resume_text
+
+
+def jd_input():
+    # Input: Job Description
+    st.sidebar.header("Job Description")
+    jd_text = st.sidebar.text_area("Paste JD text", height=200)
+    return jd_text
+
+
+def submit_button(resume_text, jd_text):
+    # Submit button
+    if st.sidebar.button("Match!"):
+        st.header("Match Results")
+        output = compare_resume(resume_text, jd_text)
+        process_inputs(output)
