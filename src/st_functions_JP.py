@@ -1,6 +1,6 @@
 import streamlit as st
 import pdfplumber
-from src.pdf_functions import read_resume
+
 
 
 def read_resume(file):
