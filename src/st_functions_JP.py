@@ -1,5 +1,5 @@
-import streamlit as st
 import pdfplumber
+import streamlit as st
 from src.resumematch_functions import JP_compare_resume
 
 
@@ -51,7 +51,7 @@ def JP_resume_input():
         resume_text = st.sidebar.text_area("履歴書のテキストを貼り付けて下さい", height=200)
         return resume_text
     # Input: File Upload
-    elif resume_method == "File":
+    elif resume_method == "ファイル":
         resume_file = st.sidebar.file_uploader("履歴書ファイルをアップロードしてください", type=["pdf", "docx", "txt"])
         if resume_file:
             resume_text = read_resume(resume_file)
