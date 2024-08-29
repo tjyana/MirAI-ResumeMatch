@@ -204,3 +204,10 @@ def compare_resume(resume_text, jd_text, language):
             }
         ]
     )
+
+    print(completion)
+    print(completion.choices[0].message)
+
+    content = completion.choices[0].message.content
+
+    return content
