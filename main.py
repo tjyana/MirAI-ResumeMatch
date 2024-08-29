@@ -2,7 +2,7 @@ import streamlit as st
 import pdfplumber
 from src.resumematch_functions import compare_resume
 from src.st_functions import read_resume, language_options, UI, resume_input, jd_input, submit_button
-
+from src.st_functions_JP import JP_UI, JP_resume_input, JP_jd_input, JP_submit_button
 
 
 
@@ -10,15 +10,21 @@ from src.st_functions import read_resume, language_options, UI, resume_input, jd
 
 def main():
 
-    language_options()
+    language = language_options()
 
     # English version
-    UI()
-    resume_text = resume_input()
-    jd_text = jd_input()
-    submit_button(resume_text, jd_text)
+    if language == 'English':
+        UI()
+        resume_text = resume_input()
+        jd_text = jd_input()
+        submit_button(resume_text, jd_text)
 
-
+    # Japanese version
+    if language == '日本語':
+        JP_UI()
+        resume_text = JP_resume_input()
+        jd_text = JP_jd_input()
+        JP_submit_button(resume_text, jd_text)
 
 
     # # Title
