@@ -1,4 +1,5 @@
 import streamlit as st
+from src.pdf_functions import read_resume
 
 # Japanese version
 # ------------------------------------------------------
@@ -43,5 +44,5 @@ def JP_submit_button(resume_text, jd_text):
     # Submit button
     if st.sidebar.button("Match!"):
         st.header("結果")
-        output = compare_resume(resume_text, jd_text)
+        output = JP_compare_resume(resume_text, jd_text)
         process_inputs(output)
