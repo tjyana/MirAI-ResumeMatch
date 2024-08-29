@@ -14,14 +14,16 @@ def main():
         UI()
         resume_text = resume_input()
         jd_text = jd_input()
-        submit_button(resume_text, jd_text, language)
+        output = submit_button(resume_text, jd_text, language)
+        process_inputs(output)
 
     # Japanese version
     if language == '日本語':
         JP_UI()
         resume_text = JP_resume_input()
         jd_text = JP_jd_input()
-        JP_submit_button(resume_text, jd_text, language)
+        output = JP_submit_button(resume_text, jd_text, language)
+        process_inputs(output)
 
 
     # # Title

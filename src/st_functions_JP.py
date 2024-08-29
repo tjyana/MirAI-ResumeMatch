@@ -65,11 +65,6 @@ def JP_jd_input():
     return jd_text
 
 
-def process_inputs(input1):
-    # Function to display the final output
-    st.markdown(input1, unsafe_allow_html=True)
-
-
 def JP_submit_button(resume_text, jd_text, language):
     # Submit button
     if st.sidebar.button("Match!"):

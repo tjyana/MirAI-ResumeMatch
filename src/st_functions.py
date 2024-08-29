@@ -81,4 +81,4 @@ def submit_button(resume_text, jd_text, language):
     if st.sidebar.button("Match!"):
         st.header("Match Results")
         output = compare_resume(resume_text, jd_text, language)
-        process_inputs(output)
+        return output
