@@ -18,7 +18,7 @@ def main():
         process_inputs(output)
 
     # Japanese version
-    if language == '日本語':
+    elif language == '日本語':
         JP_UI()
         resume_text = JP_resume_input()
         jd_text = JP_jd_input()
