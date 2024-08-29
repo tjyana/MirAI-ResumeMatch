@@ -1,5 +1,8 @@
 import streamlit as st
 from src.pdf_functions import read_resume
+import pdfplumber
+
+
 
 # Japanese version
 # ------------------------------------------------------
