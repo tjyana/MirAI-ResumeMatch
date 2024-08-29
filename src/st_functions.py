@@ -25,7 +25,7 @@ def read_resume(file):
 
 
 def language_options():
-    language = st.sidebar.radio("Language 言語", ['English', '日本語'], horizontal = True)
+    language = st.sidebar.radio(" ", ['English', '日本語'], horizontal = True)
     return language
 
 
