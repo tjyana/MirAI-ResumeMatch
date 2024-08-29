@@ -1,5 +1,6 @@
 import streamlit as st
 import pdfplumber
+from src.resumematch_functions import JP_compare_resume
 
 
 
@@ -64,9 +65,9 @@ def JP_jd_input():
     return jd_text
 
 
-def JP_submit_button(resume_text, jd_text):
+def JP_submit_button(resume_text, jd_text, language):
     # Submit button
     if st.sidebar.button("Match!"):
         st.header("結果")
-        output = JP_compare_resume(resume_text, jd_text)
+        output = JP_compare_resume(resume_text, jd_text, language)
         process_inputs(output)
