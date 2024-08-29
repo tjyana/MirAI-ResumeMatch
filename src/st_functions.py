@@ -2,7 +2,7 @@ import pdfplumber
 import streamlit as st
 from src.resumematch_functions import compare_resume
 from src.pdf_functions import read_resume
-from src.scraper_jdpage import scrape_jd
+# from src.scraper_jdpage import scrape_jd
 
 
 def language_options():
@@ -52,6 +52,8 @@ def jd_input():
     # if jd_method == "Text":
     jd_text = st.sidebar.text_area("Paste JD text", height=200)
     return jd_text
+
+
     # elif jd_method == "Link":
     #     jd_link = st.sidebar.text_area("Paste JD link")
     #     if jd_link:
