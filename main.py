@@ -1,11 +1,18 @@
 import streamlit as st
+import pdfplumber
 from src.resumematch_functions import compare_resume
 from src.st_functions import read_resume, language_options, UI, resume_input, jd_input, submit_button
 
 
 
+
+
+
 def main():
 
+    language_options()
+
+    # English version
     UI()
     resume_text = resume_input()
     jd_text = jd_input()
