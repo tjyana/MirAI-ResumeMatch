@@ -52,9 +52,9 @@ def JP_compare_resume(resume_text, jd_text, language):
                 If the candidate is missing any mandatory qualifications, please also give a warning.
 
                 If any of the conditions are true, please give warnings for the ones that are true:
-                - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
-                - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
-                - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
+                - if candidate is missing mandatory qualifications: "候補者が必須資格を欠いている可能性があります。慎重にご確認ください。"
+                - if the candidate has no university degree: "候補者が大学の学位を持っていない可能性があります。記載されている最終学歴は [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
+                - if candidate is outside of Japan, please give a warning: "候補者が海外にいる可能性があります。採用のタイムラインとビザの適用資格に注意してください。" (assume that their last place of work is their current location)
 
                 Output format should be as below, with each section title in large font.
                 Please fill in the blanks with the appropriate information.
