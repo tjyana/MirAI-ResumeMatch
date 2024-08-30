@@ -55,7 +55,7 @@ def JP_jd_input():
         jd_text = st.sidebar.text_area("求人内容を入力")
         return jd_text
     # Input: Link
-    elif jd_method == "URL":
+    elif jd_method == "求人URL":
         jd_link = st.sidebar.text_input("求人票のURLを入力")
         if jd_link:
             jd_text = scrape_jd(jd_link)
