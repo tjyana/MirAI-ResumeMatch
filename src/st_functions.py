@@ -10,6 +10,7 @@ def language_options():
     return language
 
 
+
 # English version
 # ------------------------------------------------------
 
@@ -32,7 +33,7 @@ def resume_input():
 
     # Input: Text
     if resume_method == "Text":
-        resume_text = st.sidebar.text_area("Paste Resume text", height=200)
+        resume_text = st.sidebar.text_area("Paste Resume text")
         return resume_text
     # Input: File Upload
     elif resume_method == "File":
@@ -51,11 +52,11 @@ def jd_input():
 
     # Input: Text
     if jd_method == "Text":
-        jd_text = st.sidebar.text_area("Paste JD text", height=200)
+        jd_text = st.sidebar.text_area("Paste JD text")
         return jd_text
     # Input: Link
     elif jd_method == "Link":
-        jd_link = st.sidebar.text_area("Paste JD link")
+        jd_link = st.sidebar.text_input("Paste JD link")
         if jd_link:
             jd_text = scrape_jd(jd_link)
             return jd_text

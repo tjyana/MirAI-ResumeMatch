@@ -9,6 +9,8 @@ from src.scraper_jdpage import scrape_jd
 
 
 
+
+
 # Japanese version
 # ------------------------------------------------------
 
@@ -31,7 +33,7 @@ def JP_resume_input():
 
     # Input: Text
     if resume_method == "テキスト":
-        resume_text = st.sidebar.text_area("履歴書のテキストを入力", height=200)
+        resume_text = st.sidebar.text_area("履歴書のテキストを入力")
         return resume_text
     # Input: File Upload
     elif resume_method == "ファイル":
@@ -41,26 +43,20 @@ def JP_resume_input():
             return resume_text
 
 
-# def JP_jd_input():
-#     # Input: Job Description
-#     st.sidebar.header("求人票")
-#     jd_text = st.sidebar.text_area("求人内容を貼り付けてください", height=200)
-#     return jd_text
-
 def JP_jd_input():
     # Input: Job Description
     st.sidebar.header("求人票")
 
     # Select input method: Copy and paste text or upload a file
-    jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("URL", "テキスト"), horizontal = True)
+    jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("求人URL", "テキスト"), horizontal = True)
 
     # Input: Text
     if jd_method == "テキスト":
-        jd_text = st.sidebar.text_area("求人内容を入力", height=200)
+        jd_text = st.sidebar.text_area("求人内容を入力")
         return jd_text
     # Input: Link
     elif jd_method == "URL":
-        jd_link = st.sidebar.text_area("求人票のURLを入力")
+        jd_link = st.sidebar.text_input("求人票のURLを入力")
         if jd_link:
             jd_text = scrape_jd(jd_link)
             return jd_text
