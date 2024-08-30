@@ -55,11 +55,11 @@ def JP_jd_input():
     jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("URL", "テキスト"), horizontal = True)
 
     # Input: Text
-    if jd_method == "Text":
+    if jd_method == "テキスト":
         jd_text = st.sidebar.text_area("求人内容を入力", height=200)
         return jd_text
     # Input: Link
-    elif jd_method == "Link":
+    elif jd_method == "URL":
         jd_link = st.sidebar.text_area("求人票のURLを入力")
         if jd_link:
             jd_text = scrape_jd(jd_link)
