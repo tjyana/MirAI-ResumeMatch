@@ -46,14 +46,14 @@ def jd_input():
     # Input: Job Description
     st.sidebar.header("Job Description")
 
-    # Select input method: Copy and paste text or upload a file
+    # Select input method:
     jd_method = st.sidebar.radio("""Choose JD input method:""", ("Link", "Text"), horizontal = True)
 
+    # Input: Text
     if jd_method == "Text":
         jd_text = st.sidebar.text_area("Paste JD text", height=200)
         return jd_text
-
-
+    # Input: Link
     elif jd_method == "Link":
         jd_link = st.sidebar.text_area("Paste JD link")
         if jd_link:
