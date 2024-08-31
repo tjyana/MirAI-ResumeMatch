@@ -159,8 +159,15 @@ def compare_resume(resume_text, jd_text, language):
                 OUTPUT FORMAT:
 
                 <h2>Estimated Match: [percentage]</h2>
-                <h4>Analysis:</h4>
-                <p>[reason why you gave the percentage]</p>
+
+                <h5>Job Description summary:</h5>
+                <br>[summary of the job description in one sentence]</br>
+
+                <h5>Resume summary:</h5>
+                <br>[summary of the resume in one sentence]</br>
+
+                <h3>Comparison Analysis:</h3>
+                <br>[reason why you gave the percentage]</br>
 
                 <h4>Candidate Information</h4>
                 <ul>
@@ -177,9 +184,6 @@ def compare_resume(resume_text, jd_text, language):
                     <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
                     <li>(if none of the above apply, write "None.")</li>
                 </ul>
-
-                <h4>Candidate Summary:</h4>
-                <p>(please give a short summary of candidate's experiences and skills. example: junior level candidate with 2 years of experience in software engineering, proficient in Python, Java, and C++)</p>
 
                 <h4>Qualifications:</h4>
                 <ul>
