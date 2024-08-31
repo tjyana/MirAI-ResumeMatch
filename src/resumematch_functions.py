@@ -168,10 +168,10 @@ def compare_resume(resume_text, jd_text, language):
                     <li>⚠️ (if language requirements are not confirmed, give a warning here)</li>
                 </ul>
 
-                <h5>Job Description summary:</h5>
+                <h4>Job Description summary:</h5>
                 <p>[Title of the job]: [One sentence summary of the job description.]</p>
 
-                <h5>Resume summary:</h5>
+                <h4>Resume summary:</h5>
                 <ul>
                     <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
                     <li><b>Current location:</b> [current location] </li>
