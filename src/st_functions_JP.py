@@ -1,6 +1,6 @@
 import pdfplumber
 import streamlit as st
-from src.resumematch_functions import JP_compare_resume
+from src.JP_resumematch_functions import JP_compare_resume
 from src.pdf_functions import read_resume
 from src.scraper_jdpage import scrape_jd
 
