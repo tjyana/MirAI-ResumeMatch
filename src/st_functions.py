@@ -67,7 +67,7 @@ def submit_button(resume_text, jd_title, jd_text, language):
 # English version
 def UI(language):
     title()
-    jd_text = jd_input()
+    jd_title, jd_text = jd_input()
     resume_text = resume_input()
-    output = submit_button(resume_text, jd_text, language)
+    output = submit_button(resume_text, jd_title, jd_text, language)
     return output

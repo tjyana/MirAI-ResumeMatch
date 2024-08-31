@@ -72,7 +72,7 @@ def JP_submit_button(resume_text, jd_title, jd_text, language):
 # Orchestrating the Japanese version
 def JP_UI(language):
     JP_title()
-    jd_text = JP_jd_input()
+    jd_title, jd_text = JP_jd_input()
     resume_text = JP_resume_input()
-    output = JP_submit_button(resume_text, jd_text, language)
+    output = JP_submit_button(resume_text, jd_title, jd_text, language)
     return output
