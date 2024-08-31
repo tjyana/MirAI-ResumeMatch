@@ -47,7 +47,7 @@ def jd_input():
     # Input: Text
     if jd_method == "Text":
         jd_text = st.sidebar.text_area("Paste JD text")
-        jd_title = ""
+        jd_title = "n/a"
         return jd_title, jd_text
     # Input: Link
     elif jd_method == "Link":

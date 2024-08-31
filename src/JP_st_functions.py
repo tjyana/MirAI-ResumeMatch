@@ -53,7 +53,7 @@ def JP_jd_input():
     # Input: Text
     if jd_method == "テキスト":
         jd_text = st.sidebar.text_area("求人内容を入力")
-        jd_title = ""
+        jd_title = "n/a"
         return jd_title, jd_text
     # Input: Link
     elif jd_method == "求人URL":
