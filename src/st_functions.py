@@ -70,6 +70,7 @@ def submit_button(resume_text, jd_text, language):
         return output
 
 
+# English version
 def UI(language):
     title()
     resume_text = resume_input()
