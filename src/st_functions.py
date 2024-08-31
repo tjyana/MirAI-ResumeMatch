@@ -14,7 +14,7 @@ def language_options():
 # English version
 # ------------------------------------------------------
 
-def UI():
+def title():
     # Title
     title = '''
     [MirAI Fest Entry]
@@ -68,3 +68,11 @@ def submit_button(resume_text, jd_text, language):
         st.header("Match Results")
         output = compare_resume(resume_text, jd_text, language)
         return output
+
+
+def UI(language):
+    title()
+    resume_text = resume_input()
+    jd_text = jd_input()
+    output = submit_button(resume_text, jd_text, language)
+    return output
