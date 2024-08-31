@@ -24,7 +24,7 @@ Function requiring OpenAI API
 api_key = st.secrets['OPENAI_API_KEY']
 
 @st.cache_data
-def JP_compare_resume(resume_text, jd_text, language):
+def JP_compare_resume(resume_text, jd_title, jd_text, language):
     '''
 
     Final HTML output version of the function
@@ -75,7 +75,7 @@ def JP_compare_resume(resume_text, jd_text, language):
                     </ul>
 
                     <h4>求人内容の概要：</h5>
-                    <p>[Title of the job]: [One sentence summary of the job description.]</p>
+                    <p>{jd_title}: [One sentence summary of the job description.]</p>
 
                     <h4>履歴書の概要：</h5>
                     <ul>

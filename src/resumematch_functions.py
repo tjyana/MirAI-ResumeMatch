@@ -24,7 +24,7 @@ Function requiring OpenAI API
 api_key = st.secrets['OPENAI_API_KEY']
 
 @st.cache_data
-def compare_resume(resume_text, jd_text, language):
+def compare_resume(resume_text, jd_title, jd_text, language):
     '''
 
     Final HTML output version of the function
@@ -74,7 +74,7 @@ def compare_resume(resume_text, jd_text, language):
                     </ul>
 
                     <h4>Job Description Summary:</h5>
-                    <p>[Title of the job]: [One sentence summary of the job description.]</p>
+                    <p>{jd_title}: [One sentence summary of the job description.]</p>
 
                     <h4>Resume Summary:</h5>
                     <ul>

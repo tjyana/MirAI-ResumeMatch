@@ -52,15 +52,15 @@ def jd_input():
     elif jd_method == "Link":
         jd_link = st.sidebar.text_input("Paste JD link")
         if jd_link:
-            jd_text = scrape_jd(jd_link)
-            return jd_text
+            jd_title, jd_text = scrape_jd(jd_link)
+            return jd_title, jd_text
 
 
-def submit_button(resume_text, jd_text, language):
+def submit_button(resume_text, jd_title, jd_text, language):
     # Submit button
     if st.sidebar.button("Match!"):
         st.header("Match Results")
-        output = compare_resume(resume_text, jd_text, language)
+        output = compare_resume(resume_text, jd_title, jd_text, language)
         return output
 
 

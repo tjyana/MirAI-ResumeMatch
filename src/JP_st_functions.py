@@ -58,14 +58,14 @@ def JP_jd_input():
     elif jd_method == "求人URL":
         jd_link = st.sidebar.text_input("求人票のURLを入力")
         if jd_link:
-            jd_text = scrape_jd(jd_link)
-            return jd_text
+            jd_title, jd_text = scrape_jd(jd_link)
+            return jd_title, jd_text
 
 
-def JP_submit_button(resume_text, jd_text, language):
+def JP_submit_button(resume_text, jd_title, jd_text, language):
     # Submit button
     if st.sidebar.button("Match!"):
-        output = JP_compare_resume(resume_text, jd_text, language)
+        output = JP_compare_resume(resume_text, jd_title, jd_text, language)
         return output
 
 
