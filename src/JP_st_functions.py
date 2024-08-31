@@ -34,7 +34,8 @@ def JP_resume_input():
     # Input: Text
     if resume_method == "テキスト":
         resume_text = st.sidebar.text_area("レジュメのテキストを入力")
-        st.write(f'レジュメ： テキスト入力')
+        if resume_text:
+            st.write(f'レジュメ： テキスト入力')
         return resume_text
     # Input: File Upload
     elif resume_method == "ファイル":
@@ -56,7 +57,8 @@ def JP_jd_input():
     if jd_method == "テキスト":
         jd_text = st.sidebar.text_area("求人内容を入力")
         jd_title = "n/a"
-        st.write(f'求人内容： テキスト入力')
+        if jd_text:
+            st.write(f'求人内容： テキスト入力')
         return jd_title, jd_text
     # Input: Link
     elif jd_method == "求人URL":
