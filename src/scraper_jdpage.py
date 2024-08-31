@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
+import streamlit as st
 
 
 # URL of the careers page
@@ -10,7 +10,7 @@ url = 'https://hrmos.co/pages/moneyforward/jobs/1877612029521268793'
 def scrape_jd(url):
 
     if 'hrmos.co/pages/moneyforward/jobs/' not in url:
-        return 'Invalid URL. Please enter a valid MoneyForward job description.'
+        st.error('Invalid URL. Please enter a valid MoneyForward job description.')
 
     else:
         # Fetch the main page
