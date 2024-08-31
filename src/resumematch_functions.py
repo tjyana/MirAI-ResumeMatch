@@ -151,7 +151,7 @@ def compare_resume(resume_text, jd_text, language):
                 - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
                 - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
                 - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
-                - if you cannot confirm the candidate fulfills language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
+                - if you cannot confirm candidate fulfills jd language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
                 Output format should be as below, with each section title in large font.
                 Please fill in the blanks with the appropriate information.
@@ -174,10 +174,10 @@ def compare_resume(resume_text, jd_text, language):
                 <h5>Resume summary:</h5>
                 <ul>
                     <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
-                    <li>Current location: [current location] </li>
-                    <li>Highest eduation: [highest education listed] [</li>
-                    <li>Japanese language ability: [Japanese language ability discernible from resume] </li>
-                    <li>English language ability: [English language ability discernible from resume</li>
+                    <li><b>Current location:</b> [current location] </li>
+                    <li><b>Highest eduation:</b> [highest education listed] [</li>
+                    <li><b>Japanese language ability:</b> [Japanese language ability discernible from resume] </li>
+                    <li><b>English language ability:</b> [English language ability discernible from resume</li>
                 </ul>
 
                 <h3>Comparison Analysis:</h3>
