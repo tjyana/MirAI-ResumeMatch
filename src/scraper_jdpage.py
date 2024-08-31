@@ -38,9 +38,9 @@ def scrape_description(soup):
 def scrape_title(soup):
 
     # Find the h1 element with the class sg-corporate-name
-    job_title = soup.find('h1', class_='sg-corporate-name').text
+    jd_title = soup.find('h1', class_='sg-corporate-name').text
 
-    return job_title
+    return jd_title
 
 
 # Orchestrating the scraping functions
@@ -54,6 +54,6 @@ def scrape_jd(url):
     # Else, scrape the job description
     else:
         soup = get_url(url)
+        jd_title = scrape_title(soup)
         jd_text = scrape_description(soup)
-        job_title = scrape_title(soup)
-        return jd_text, job_title
+        return jd_title, jd_text
