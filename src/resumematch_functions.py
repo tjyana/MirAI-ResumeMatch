@@ -174,18 +174,14 @@ def compare_resume(resume_text, jd_text, language):
                 <h5>Resume summary:</h5>
                 <ul>
                     <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
-                    <li>Current location:</li>
-                    <li>College degree (Bachelor's or above):</li>
-                    <li>Japanese language ability:</li>
-                    <li>English language ability:</li>
+                    <li>Current location: [current location] </li>
+                    <li>Highest eduation: [highest education listed] [</li>
+                    <li>Japanese language ability: [Japanese language ability discernible from resume] </li>
+                    <li>English language ability: [English language ability discernible from resume</li>
                 </ul>
 
                 <h3>Comparison Analysis:</h3>
                 [reason why you gave the percentage]
-
-
-
-
 
                 <h4>Qualifications:</h4>
                 <ul>
