@@ -160,23 +160,6 @@ def compare_resume(resume_text, jd_text, language):
 
                 <h2>Estimated Match: [percentage]</h2>
 
-                <h5>Job Description summary:</h5>
-                [Please give the title of the job, and one sentence summary of the job description.]
-
-                <h5>Resume summary:</h5>
-                [Summary of the resume in one sentence. Please include years of experience if discernible.]
-
-                <h3>Comparison Analysis:</h3>
-                [reason why you gave the percentage]</br>
-
-                <h4>Candidate Information</h4>
-                <ul>
-                    <li>Current location:</li>
-                    <li>College degree (Bachelor's or above):</li>
-                    <li>Japanese language ability:</li>
-                    <li>English language ability:</li>
-                </ul>
-
                 <h4>Warnings:</h4>
                 <ul>
                     <li>⚠️ (if mandatory qualifications are missing, give a warning here)</li>
@@ -184,6 +167,25 @@ def compare_resume(resume_text, jd_text, language):
                     <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
                     <li>(if none of the above apply, write "None.")</li>
                 </ul>
+
+                <h5>Job Description summary:</h5>
+                <p>[Title of the job]: [One sentence summary of the job description.]</p>
+
+                <h5>Resume summary:</h5>
+                <ul>
+                    <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
+                    <li>Current location:</li>
+                    <li>College degree (Bachelor's or above):</li>
+                    <li>Japanese language ability:</li>
+                    <li>English language ability:</li>
+                </ul>
+
+                <h3>Comparison Analysis:</h3>
+                [reason why you gave the percentage]
+
+
+
+
 
                 <h4>Qualifications:</h4>
                 <ul>
@@ -199,8 +201,6 @@ def compare_resume(resume_text, jd_text, language):
                     <li>etc.</li>
                 </ul>
 
-                <h4>Skill gaps:</h4>
-                <p>[write any notable skill gaps here]</p>
 
 
 
