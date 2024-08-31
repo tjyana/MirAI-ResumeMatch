@@ -161,13 +161,13 @@ def compare_resume(resume_text, jd_text, language):
                 <h2>Estimated Match: [percentage]</h2>
 
                 <h5>Job Description summary:</h5>
-                <br>[summary of the job description in one sentence]</br>
+                [Please give the title of the job, and one sentence summary of the job description.]
 
                 <h5>Resume summary:</h5>
-                <br>[summary of the resume in one sentence]</br>
+                [Summary of the resume in one sentence. Please include years of experience if discernible.]
 
                 <h3>Comparison Analysis:</h3>
-                <br>[reason why you gave the percentage]</br>
+                [reason why you gave the percentage]</br>
 
                 <h4>Candidate Information</h4>
                 <ul>
