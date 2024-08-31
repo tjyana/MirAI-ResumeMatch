@@ -49,7 +49,6 @@ def scrape_jd(url):
     # Error handling for invalid URLs
     if 'hrmos.co/pages/moneyforward/jobs/' not in url:
         st.error('Invalid URL. Please enter a valid MoneyForward job description.')
-        return None
 
     # Else, scrape the job description
     else:
