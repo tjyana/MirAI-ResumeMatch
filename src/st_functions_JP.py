@@ -14,7 +14,7 @@ from src.scraper_jdpage import scrape_jd
 # Japanese version
 # ------------------------------------------------------
 
-def JP_UI():
+def JP_title():
     # Title
     title = '''
     【みんなのMirAIフェス】
@@ -68,3 +68,12 @@ def JP_submit_button(resume_text, jd_text, language):
         st.header("結果")
         output = JP_compare_resume(resume_text, jd_text, language)
         return output
+
+
+# Orchestrating the Japanese version
+def JP_UI(language):
+    JP_title()
+    resume_text = JP_resume_input()
+    jd_text = JP_jd_input()
+    output = JP_submit_button(resume_text, jd_text, language)
+    return output
