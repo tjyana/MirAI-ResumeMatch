@@ -5,12 +5,6 @@ from src.pdf_functions import read_resume
 from src.scraper_jdpage import scrape_jd
 
 
-def language_options():
-    language = st.sidebar.radio(" ", ['日本語', 'English'], horizontal = True)
-    return language
-
-
-
 # English version
 # ------------------------------------------------------
 
