@@ -26,18 +26,18 @@ def JP_title():
 
 def JP_resume_input():
     # Input: Resume
-    st.sidebar.header("Resume")
+    st.sidebar.header("レジュメ")
 
     # Select input method: Copy and paste text or upload a file
     resume_method = st.sidebar.radio("""履歴書の入力方法を選択""", ("ファイル", "テキスト"), horizontal = True)
 
     # Input: Text
     if resume_method == "テキスト":
-        resume_text = st.sidebar.text_area("履歴書のテキストを入力")
+        resume_text = st.sidebar.text_area("レジュメのテキストを入力")
         return resume_text
     # Input: File Upload
     elif resume_method == "ファイル":
-        url = st.sidebar.file_uploader("履歴書ファイルをアップロード", type=["pdf", "docx", "txt"])
+        url = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
         if url:
             resume_text = read_resume(url)
             return resume_text
