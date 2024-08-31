@@ -7,7 +7,7 @@ import streamlit as st
 url = 'https://hrmos.co/pages/moneyforward/jobs/1877612029521268793'
 
 
-def scrape_jd(url):
+def scrape_description(url):
 
     if 'hrmos.co/pages/moneyforward/jobs/' not in url:
         st.error('Invalid URL. Please enter a valid MoneyForward job description.')
@@ -34,3 +34,35 @@ def scrape_jd(url):
         jd_text = soup_truncated.get_text(separator='\n').strip()
 
         return jd_text
+
+
+def scrape_title(url):
+
+
+    if 'hrmos.co/pages/moneyforward/jobs/' not in url:
+        st.error('Invalid URL. Please enter a valid MoneyForward job description.')
+        return None
+
+    else:
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, 'html.parser')
+
+        # Find the h1 element with the class sg-corporate-name
+        job_title = soup.find('h1', class_='sg-corporate-name').text
+
+        return job_title
+
+
+# Orchestrating the scraping functions
+def scrape_jd(url):
+
+    # Error handling for invalid URLs
+    if 'hrmos.co/pages/moneyforward/jobs/' not in url:
+        st.error('Invalid URL. Please enter a valid MoneyForward job description.')
+        return None
+
+    # Else, scrape the job description
+    else:
+        jd_text = scrape_description(url)
+        job_title = scrape_title(url)
+        return jd_text, job_title
