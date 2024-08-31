@@ -55,4 +55,5 @@ def scrape_jd(url):
         soup = get_url(url)
         jd_title = scrape_title(soup)
         jd_text = scrape_description(soup)
+
         return jd_title, jd_text

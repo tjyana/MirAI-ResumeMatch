@@ -60,6 +60,7 @@ def JP_jd_input():
         jd_link = st.sidebar.text_input("求人票のURLを入力")
         if jd_link:
             jd_title, jd_text = scrape_jd(jd_link)
+            st.write(f'Job Title: {jd_title}')
             return jd_title, jd_text
 
 
