@@ -54,7 +54,7 @@ def compare_resume(resume_text, jd_text, language):
 
                     If any of the conditionsa are true, please give warnings for the ones that are true:
                     - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
-                    - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
+                    - if resume does not mention a 4-year degree, bachelor's, master's, or PhD, or only mentions associate's degree and/or high school diploma: "Candidate may not have university degree. Highest education listed is [highest education listed]."
                     - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
                     - if you cannot confirm candidate fulfills jd language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
@@ -68,7 +68,7 @@ def compare_resume(resume_text, jd_text, language):
 
                     <ul>
                         <li>⚠️ (if mandatory qualifications are missing, give a warning here)</li>
-                        <li>⚠️ (if no university degree is not listed, give a warning here)</li>
+                        <li>⚠️ (if resume does not mention a 4-year degree, bachelor's, master's, or PhD, or only mentions associate's degree and/or high school diploma, give a warning here)</li>
                         <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
                         <li>⚠️ (if language requirements are not confirmed, give a warning here)</li>
                     </ul>
