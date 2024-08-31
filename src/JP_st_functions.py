@@ -37,9 +37,9 @@ def JP_resume_input():
         return resume_text
     # Input: File Upload
     elif resume_method == "ファイル":
-        url = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
-        if url:
-            resume_text = read_resume(url)
+        resume_file = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
+        if resume_file:
+            resume_text = read_resume(resume_file)
             return resume_text
 
 
