@@ -1,13 +1,13 @@
 import streamlit as st
 import pdfplumber
 from src.resumematch_functions import compare_resume
-from src.st_functions import read_resume, language_options, UI, resume_input, jd_input, submit_button
-from src.st_functions_JP import read_resume, JP_UI, JP_resume_input, JP_jd_input, JP_submit_button
+from src.st_functions import read_resume, UI, resume_input, jd_input, submit_button
+from src.JP_st_functions import read_resume, JP_UI, JP_resume_input, JP_jd_input, JP_submit_button
 from src.st_functions import UI
 
 def main():
 
-    language = language_options()
+    language = st.sidebar.radio(" ", ['日本語', 'English'], horizontal = True)
 
     # # English version
     # if language == 'English':
