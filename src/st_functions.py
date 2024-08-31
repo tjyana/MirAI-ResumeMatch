@@ -52,7 +52,7 @@ def jd_input():
     # Input: Link
     elif jd_method == "Link":
         jd_link = st.sidebar.text_input("Paste JD link")
-        if jd_link:
+        if jd_link != "":
             jd_title, jd_text = scrape_jd(jd_link)
             return jd_title, jd_text
 
@@ -60,7 +60,6 @@ def jd_input():
 def submit_button(resume_text, jd_title, jd_text, language):
     # Submit button
     if st.sidebar.button("Match!"):
-        st.header("Match Results")
         output = compare_resume(resume_text, jd_title, jd_text, language)
         return output
 
