@@ -151,6 +151,7 @@ def compare_resume(resume_text, jd_text, language):
                 - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
                 - if the candidate has no university degree: "Candidate may not have university degree. Highest education listed is [highest education listed]." (example: if high school diploma is highest mentioned, assume they do not have college degree) (if resume does not mention a university degree, assume they don't have one)
                 - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
+                - if you cannot confirm the candidate fulfills language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
                 Output format should be as below, with each section title in large font.
                 Please fill in the blanks with the appropriate information.
@@ -160,12 +161,11 @@ def compare_resume(resume_text, jd_text, language):
 
                 <h2>Estimated Match: [percentage]</h2>
 
-                <h4>Warnings:</h4>
                 <ul>
                     <li>⚠️ (if mandatory qualifications are missing, give a warning here)</li>
                     <li>⚠️ (if no university degree is not listed, give a warning here)</li>
                     <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
-                    <li>(if none of the above apply, write "None.")</li>
+                    <li>⚠️ (if language requirements are not confirmed, give a warning here)</li>
                 </ul>
 
                 <h5>Job Description summary:</h5>
