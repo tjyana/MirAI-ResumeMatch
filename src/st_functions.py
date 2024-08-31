@@ -54,7 +54,7 @@ def jd_input():
         jd_link = st.sidebar.text_input("Paste JD link")
         if jd_link == "":
             st.write("Please enter a valid URL.")
-        if jd_link != "":
+        elif jd_link != "":
             jd_title, jd_text = scrape_jd(jd_link)
             return jd_title, jd_text
 
