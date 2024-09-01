@@ -49,12 +49,11 @@ def jd_input():
         jd_text = st.sidebar.text_area("Paste JD text")
         jd_title = "n/a"
         return jd_title, jd_text
+
     # Input: Link
     elif jd_method == "Link":
         jd_link = st.sidebar.text_input("Paste JD link")
-        if jd_link == "":
-            st.write("Please enter a valid URL.")
-        elif jd_link != "":
+        if jd_link != "":
             jd_title, jd_text = scrape_jd(jd_link)
             return jd_title, jd_text
 
@@ -69,11 +68,7 @@ def submit_button(resume_text, jd_title, jd_text, language):
 # English version
 def UI(language):
     title()
-    result = jd_input()
-    if result:
-        jd_title, jd_text = result
-    else:
-        jd_title, jd_text = '', ''
+    jd_title, jd_text = jd_input()
     resume_text = resume_input()
     output = submit_button(resume_text, jd_title, jd_text, language)
     return output
