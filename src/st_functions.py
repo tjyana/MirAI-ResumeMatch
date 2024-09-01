@@ -73,14 +73,19 @@ def jd_input():
 
 def submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.write("Match!をクリックしてください。")
+        st.write("Ready to 'Match!'")
     # Submit button
     if st.sidebar.button("Match!"):
-        output = compare_resume(resume_text, jd_title, jd_text, language)
-        return output
+        if jd_text is None:
+            st.error('Please enter a valid MoneyForward job description.')
+        if resume_text is None:
+            st.error('Please enter a valid resume.')
+        else:
+            output = compare_resume(resume_text, jd_title, jd_text, language)
+            return output
 
 
-# English version
+# Orchestrating the English version
 def UI(language):
     title()
     jd_title, jd_text = jd_input()
