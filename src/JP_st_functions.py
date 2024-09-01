@@ -29,16 +29,15 @@ def JP_resume_input():
     if resume_method == "テキスト":
         resume_text = st.sidebar.text_area("レジュメのテキストを入力")
         if resume_text:
-            st.warning(f'レジュメ： テキスト入力')
-        return resume_text
+            # st.write('レジュメ内容：', resume_text[0:100] + '...')
+            return resume_text
 
     # Input: File Upload
     elif resume_method == "ファイル":
         resume_file = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
         if resume_file:
             resume_text = read_resume(resume_file)
-            st.warning(f'レジュメ： ファイルアップロード')
-            st.write('レジュメ内容：', resume_text[0:100] + '...')
+            # st.write('レジュメ内容：', resume_text[0:100] + '...')
             return resume_text
 
 
@@ -55,8 +54,7 @@ def JP_jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                st.warning('求人内容： リンク入力')
-                st.write(f'求人：{jd_title}')
+                # st.write(f'求人：{jd_title}')
                 return jd_title, jd_text
             except Exception as e:
                 st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
@@ -66,8 +64,8 @@ def JP_jd_input():
     elif jd_method == "テキスト":
         jd_text = st.sidebar.text_area("求人内容をテキスト入力")
         if jd_text:
-            jd_title = "n/a"
-            st.warning(f'求人内容： テキスト入力')
+            jd_title = "概要"
+            # st.write(f'求人：', jd_text[0:100] + '...')
             return jd_title, jd_text
 
     return None, None
@@ -76,6 +74,8 @@ def JP_jd_input():
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
         st.success("　入力を確認できました！「Match!」をクリックしてください。", icon ='✅')
+        st.write(f'求人：{jd_title}')
+        st.write('レジュメ内容：', resume_text[0:100] + '...')
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
