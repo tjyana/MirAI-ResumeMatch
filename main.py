@@ -21,11 +21,11 @@ def main():
         st.write(' ')
         st.write(' ')
         if language == 'English':
-            st.warning('⬇️Not happy with the results? Search for best fit jobs with this tool⬇️')
-            st.page_link('https://mf-jobmatch.streamlit.app/', label='👍JobMatch👍 (for Money Forward jobs)')
+            st.warning('⬇️Not happy with the results? Search for best fit jobs with JobMatch! ⬇️')
+            st.page_link('        https://mf-jobmatch.streamlit.app/', label='JobMatch👍 (for Money Forward jobs)')
         elif language == '日本語':
-            st.warning('⬇️結果が微妙？このツールでベストフィットの求人を探そう！⬇️')
-            st.page_link('https://mf-jobmatch.streamlit.app/', label='👍JobMatch👍 (マネーフォワード求人用)')
+            st.warning('⬇️結果が微妙？JobMatchでベストフィットの求人を探そう！⬇️')
+            st.page_link('        https://mf-jobmatch.streamlit.app/', label='JobMatch👍 (マネーフォワード求人用)')
 
 
 
