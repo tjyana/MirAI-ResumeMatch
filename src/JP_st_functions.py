@@ -73,7 +73,7 @@ def JP_jd_input():
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.success("　入力を確認できました！「Match!」をクリックしてください。", icon ='✅')
+        st.toast("✅ 入力が確認できました！「Match!」をクリックしてください。")
         st.write(f'求人：{jd_title}')
         st.write('レジュメ内容：', resume_text[0:100] + '...')
     # Submit button
