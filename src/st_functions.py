@@ -29,14 +29,13 @@ def resume_input():
     if resume_method == "Text":
         resume_text = st.sidebar.text_area("Enter Resume text")
         if resume_text:
-            st.write(f'Resume: Text input')
-        return resume_text
+            return resume_text
+
     # Input: File Upload
     elif resume_method == "File":
         resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
         if resume_file:
             resume_text = read_resume(resume_file)
-            st.write(f'Resume: File upload')
             return resume_text
 
 
@@ -53,8 +52,6 @@ def jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                st.write(f'''Job Description: Link input \n
-                         Job Title: {jd_title}''')
                 return jd_title, jd_text
             except Exception as e:
                 st.error("Could not retrieve job information from the URL. Please check the URL.")
@@ -64,8 +61,7 @@ def jd_input():
     elif jd_method == "Text":
         jd_text = st.sidebar.text_area("Enter JD text")
         if jd_text:
-            jd_title = "n/a"
-            st.write(f'Job Description: Text input')
+            jd_title = "Summary"
             return jd_title, jd_text
 
     return None, None
@@ -73,7 +69,9 @@ def jd_input():
 
 def submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.write("Ready to 'Match!'")
+        st.write(f'求人：{jd_title}')
+        st.write('レジュメ内容：', resume_text[0:100] + '...')
+        st.toast("✅Inputs confirmed! Click 'Match!' to proceed.")
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
