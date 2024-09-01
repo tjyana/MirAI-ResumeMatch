@@ -38,7 +38,7 @@ def JP_resume_input():
         if resume_file:
             resume_text = read_resume(resume_file)
             st.warning(f'レジュメ： ファイルアップロード')
-            st.write(resume_text[0:20] + '...')
+            st.write('レジュメ内容：', resume_text[0:100] + '...')
             return resume_text
 
 
