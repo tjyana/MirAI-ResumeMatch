@@ -1,16 +1,5 @@
 import streamlit as st
 from openai import OpenAI
-import os
-from dotenv import load_dotenv
-
-# # for testing locally --------------------------------------
-# load_dotenv()
-# api_key = os.getenv('OPENAI_API_KEY') # create a variable in .env file 'GOOGLE_API_KEY' and add the api key there
-
-# # # for testing on streamlit share -----------------------------
-# if api_key != True:
-#     api_key = st.secrets['OPENAI_API_KEY']
-
 
 '''
 Function requiring OpenAI API

@@ -1,4 +1,3 @@
-import pdfplumber
 import streamlit as st
 from src.JP_resumematch_functions import JP_compare_resume
 from src.pdf_functions import read_resume
@@ -81,13 +80,6 @@ def JP_submit_button(resume_text, jd_title, jd_text, language):
         # Resume preview
         st.markdown('<b>レジュメ内容: </b>', unsafe_allow_html=True)
         st.write(f'{resume_text[0:80]}...')
-
-
-        # if jd_title == "概要":
-        #     st.subheader(f'求人内容：{jd_text[0:80]}...')
-        # else:
-        #     st.subheader(f'求人：{jd_title}')
-        # st.subheader(f'レジュメ内容：{resume_text[0:80]}...')
 
         # Confirmation message
         st.toast("✅入力が確認できました！「Match!」をクリックしてください。")

@@ -1,4 +1,3 @@
-import pdfplumber
 import streamlit as st
 from src.resumematch_functions import compare_resume
 from src.pdf_functions import read_resume
