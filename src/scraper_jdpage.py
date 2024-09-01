@@ -3,11 +3,6 @@ from bs4 import BeautifulSoup
 import streamlit as st
 
 
-# URL of the careers page
-url = 'https://hrmos.co/pages/moneyforward/jobs/1877612029521268793'
-
-
-
 def get_url(url):
     # Fetch the main page
     response = requests.get(url)
