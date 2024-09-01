@@ -69,11 +69,27 @@ def JP_jd_input():
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
+
+        # Job description preview
         if jd_title == "概要":
-            st.subheader(f'求人内容：{jd_text[0:80]}...')
+            st.markdown('<b>求人内容: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_text[0:80]}...')
         else:
-            st.subheader(f'求人：{jd_title}')
-        st.subheader(f'レジュメ内容：{resume_text[0:80]}...')
+            st.markdown('<b>求人: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_title}')
+
+        # Resume preview
+        st.markdown('<b>レジュメ内容: </b>', unsafe_allow_html=True)
+        st.write(f'{resume_text[0:80]}...')
+
+
+        # if jd_title == "概要":
+        #     st.subheader(f'求人内容：{jd_text[0:80]}...')
+        # else:
+        #     st.subheader(f'求人：{jd_title}')
+        # st.subheader(f'レジュメ内容：{resume_text[0:80]}...')
+
+        # Confirmation message
         st.toast("✅入力が確認できました！「Match!」をクリックしてください。")
 
     # Submit button
