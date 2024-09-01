@@ -5,12 +5,6 @@ from src.pdf_functions import read_resume
 from src.scraper_jdpage import scrape_jd
 
 
-
-
-
-
-
-
 # Japanese version
 # ------------------------------------------------------
 
@@ -60,6 +54,7 @@ def JP_jd_input():
         if jd_text:
             st.write(f'求人内容： テキスト入力')
         return jd_title, jd_text
+
     # Input: Link
     elif jd_method == "求人URL":
         jd_link = st.sidebar.text_input("求人票のURLを入力")
