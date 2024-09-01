@@ -41,14 +41,14 @@ def JP_resume_input():
 
 def JP_jd_input():
     # Input: Job Description
-    st.sidebar.header("求人票")
+    st.sidebar.header("求人内容")
 
     # Select input method: Link or Text
     jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("求人URL", "テキスト"), horizontal = True)
 
     # Input: Link
     if jd_method == "求人URL":
-        jd_link = st.sidebar.text_input("求人票のURLを入力")
+        jd_link = st.sidebar.text_input("求人票のURLを入力(マネーフォワードの求人内容)")
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
@@ -69,9 +69,13 @@ def JP_jd_input():
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.write(f'求人：{jd_title}')
+        if jd_title == "概要":
+            st.write('求人内容：', jd_text[0:100] + '...')
+        else:
+            st.write(f'求人：{jd_title}')
+        # st.write(f'求人：{jd_title}')
         st.write('レジュメ内容：', resume_text[0:100] + '...')
-        st.toast("✅ 入力が確認できました！「Match!」をクリックしてください。")
+        st.toast("✅入力が確認できました！「Match!」をクリックしてください。")
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
