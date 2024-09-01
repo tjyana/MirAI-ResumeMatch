@@ -67,6 +67,7 @@ def JP_jd_input():
             st.write(f'求人内容： テキスト入力')
         return jd_title, jd_text
 
+    return None, None
 
 
 
