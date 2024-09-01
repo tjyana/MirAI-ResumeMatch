@@ -65,7 +65,7 @@ def JP_jd_input():
         if jd_text:
             jd_title = "n/a"
             st.write(f'求人内容： テキスト入力')
-        return jd_title, jd_text
+            return jd_title, jd_text
 
     return None, None
 
