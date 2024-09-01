@@ -61,7 +61,7 @@ def JP_jd_input():
 
     # Input: Text
     elif jd_method == "テキスト":
-        jd_text = st.sidebar.text_area("求人内容を入力")
+        jd_text = st.sidebar.text_area("求人内容をテキスト入力")
         if jd_text:
             jd_title = "n/a"
             st.write(f'求人内容： テキスト入力')
@@ -90,9 +90,7 @@ def JP_UI(language):
     JP_title()
 
     jd_title, jd_text = JP_jd_input()
-    if jd_title is None or jd_text is None:
-        st.warning("求人内容が入力されていません。URLまたはテキストを入力してください。")
-        return
+
 
     resume_text = JP_resume_input()
     output = JP_submit_button(resume_text, jd_title, jd_text, language)
