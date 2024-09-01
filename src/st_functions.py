@@ -70,7 +70,8 @@ def jd_input():
 def submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
         if jd_title == "Summary":
-            st.subheader(f'Job Description: {jd_text[0:80]}...')
+            st.markdown('<b>Job Description: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_text[0:80]}...')
         else:
             st.subheader(f'Job Description: {jd_title}')
         st.subheader(f'Resume: {resume_text[0:80]}...')
