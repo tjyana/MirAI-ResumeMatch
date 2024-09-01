@@ -70,11 +70,10 @@ def jd_input():
 def submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
         if jd_title == "Summary":
-            st.write('Job Description: ', jd_text[0:100] + '...')
+            st.write('Job Description: ', jd_text[0:80] + '...')
         else:
             st.write(f'Job Description: {jd_title}')
-        # st.write(f'求人：{jd_title}')
-        st.write('レジュメ内容：', resume_text[0:100] + '...')
+        st.write('Resume', resume_text[0:80] + '...')
         st.toast("✅Inputs confirmed! Click 'Match!' to proceed.")
     # Submit button
     if st.sidebar.button("Match!"):
