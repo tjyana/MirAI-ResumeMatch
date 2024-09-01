@@ -47,22 +47,27 @@ def JP_jd_input():
     # Select input method: Copy and paste text or upload a file
     jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("求人URL", "テキスト"), horizontal = True)
 
+    # Input: Link
+    if jd_method == "求人URL":
+        jd_link = st.sidebar.text_input("求人票のURLを入力")
+        if jd_link:
+            try:
+                jd_title, jd_text = scrape_jd(jd_link)
+                st.write(f'求人内容： リンク入力\n求人：{jd_title}')
+                return jd_title, jd_text
+            except Exception as e:
+                st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
+                return None, None
+
     # Input: Text
-    if jd_method == "テキスト":
+    elif jd_method == "テキスト":
         jd_text = st.sidebar.text_area("求人内容を入力")
-        jd_title = "n/a"
         if jd_text:
+            jd_title = "n/a"
             st.write(f'求人内容： テキスト入力')
         return jd_title, jd_text
 
-    # Input: Link
-    elif jd_method == "求人URL":
-        jd_link = st.sidebar.text_input("求人票のURLを入力")
-        if jd_link:
-            jd_title, jd_text = scrape_jd(jd_link)
-            st.write(f'''求人内容： リンク入力
-                     求人：{jd_title}''')
-            return jd_title, jd_text
+
 
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
