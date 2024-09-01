@@ -70,11 +70,12 @@ def JP_jd_input():
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
         if jd_title == "概要":
-            st.write('求人内容：', jd_text[0:80] + '...')
+            st.subheader(f'求人内容：{jd_text[0:80]}...')
         else:
-            st.write(f'求人：{jd_title}')
-        st.write('レジュメ内容：', resume_text[0:80] + '...')
+            st.subheader(f'求人：{jd_title}')
+        st.subheader(f'レジュメ内容：{resume_text[0:80]}...')
         st.toast("✅入力が確認できました！「Match!」をクリックしてください。")
+
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
