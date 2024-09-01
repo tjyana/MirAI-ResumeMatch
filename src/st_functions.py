@@ -63,12 +63,12 @@ def jd_input():
     # Input: Text
     elif jd_method == "Text":
         jd_text = st.sidebar.text_area("Enter JD text")
-        jd_title = "n/a"
         if jd_text:
+            jd_title = "n/a"
             st.write(f'Job Description: Text input')
-        return jd_title, jd_text
+            return jd_title, jd_text
 
-
+    return None, None
 
 
 def submit_button(resume_text, jd_title, jd_text, language):
