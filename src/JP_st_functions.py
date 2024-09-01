@@ -87,7 +87,12 @@ def JP_submit_button(resume_text, jd_title, jd_text, language):
 # Orchestrating the Japanese version
 def JP_UI(language):
     JP_title()
+
     jd_title, jd_text = JP_jd_input()
+    if jd_title is None or jd_text is None:
+        st.warning("求人内容が入力されていません。URLまたはテキストを入力してください。")
+        return
+
     resume_text = JP_resume_input()
     output = JP_submit_button(resume_text, jd_title, jd_text, language)
     return output
