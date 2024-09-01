@@ -5,16 +5,10 @@ from src.pdf_functions import read_resume
 from src.scraper_jdpage import scrape_jd
 
 
-def language_options():
-    language = st.sidebar.radio(" ", ['日本語', 'English'], horizontal = True)
-    return language
-
-
-
 # English version
 # ------------------------------------------------------
 
-def UI():
+def title():
     # Title
     title = '''
     [MirAI Fest Entry]
@@ -33,8 +27,10 @@ def resume_input():
 
     # Input: Text
     if resume_method == "Text":
-        resume_text = st.sidebar.text_area("Paste Resume text")
-        return resume_text
+        resume_text = st.sidebar.text_area("Enter Resume text")
+        if resume_text:
+            return resume_text
+
     # Input: File Upload
     elif resume_method == "File":
         resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
@@ -48,23 +44,62 @@ def jd_input():
     st.sidebar.header("Job Description")
 
     # Select input method:
-    jd_method = st.sidebar.radio("""Choose JD input method:""", ("Link", "Text"), horizontal = True)
+    jd_method = st.sidebar.radio("""Choose JD input method:""", ("JD Link", "Text"), horizontal = True)
+
+    # Input: Link
+    if jd_method == "JD Link":
+        jd_link = st.sidebar.text_input("Enter JD link")
+        if jd_link:
+            try:
+                jd_title, jd_text = scrape_jd(jd_link)
+                return jd_title, jd_text
+            except Exception as e:
+                st.error("Could not retrieve job information from the URL. Please check the URL.")
+                return None, None
 
     # Input: Text
-    if jd_method == "Text":
-        jd_text = st.sidebar.text_area("Paste JD text")
-        return jd_text
-    # Input: Link
-    elif jd_method == "Link":
-        jd_link = st.sidebar.text_input("Paste JD link")
-        if jd_link:
-            jd_text = scrape_jd(jd_link)
-            return jd_text
+    elif jd_method == "Text":
+        jd_text = st.sidebar.text_area("Enter JD text")
+        if jd_text:
+            jd_title = "Summary"
+            return jd_title, jd_text
+
+    return None, None
 
 
-def submit_button(resume_text, jd_text, language):
+def submit_button(resume_text, jd_title, jd_text, language):
+    if jd_text and resume_text:
+
+        # Job description preview
+        if jd_title == "Summary":
+            st.markdown('<b>Job Description: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_text[0:80]}...')
+        else:
+            st.markdown('<b>Job Description: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_title}')
+
+        # Resume preview
+        st.markdown('<b>Resume: </b>', unsafe_allow_html=True)
+        st.write(f'{resume_text[0:80]}...')
+
+        # Confirmation message
+        st.toast("✅Inputs confirmed! Click 'Match!' to proceed.")
+
     # Submit button
     if st.sidebar.button("Match!"):
-        st.header("Match Results")
-        output = compare_resume(resume_text, jd_text, language)
-        return output
+        if jd_text is None:
+            st.error('Please enter a valid MoneyForward job description.')
+        if resume_text is None:
+            st.error('Please enter a valid resume.')
+        else:
+            output = compare_resume(resume_text, jd_title, jd_text, language)
+            return output
+
+
+# Orchestrating the English version
+def UI(language):
+    title()
+    jd_title, jd_text = jd_input()
+    resume_text = resume_input()
+    output = submit_button(resume_text, jd_title, jd_text, language)
+    return output
