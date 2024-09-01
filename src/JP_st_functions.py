@@ -53,7 +53,8 @@ def JP_jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                st.write(f'求人内容： リンク入力\n求人：{jd_title}')
+                st.write(f'''求人内容： リンク入力 \n
+                         求人：{jd_title}''')
                 return jd_title, jd_text
             except Exception as e:
                 st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
@@ -70,16 +71,15 @@ def JP_jd_input():
     return None, None
 
 
-
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
         st.write("Match!をクリックしてください。")
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
-            st.error('Please enter a valid MoneyForward job description.')
+            st.error('有効なマネーフォワードの求人内容を入力してください。')
         if resume_text is None:
-            st.error('Please enter a valid resume.')
+            st.error('有効なレジュメを入力してください。')
         else:
             output = JP_compare_resume(resume_text, jd_title, jd_text, language)
             return output
@@ -88,10 +88,7 @@ def JP_submit_button(resume_text, jd_title, jd_text, language):
 # Orchestrating the Japanese version
 def JP_UI(language):
     JP_title()
-
     jd_title, jd_text = JP_jd_input()
-
-
     resume_text = JP_resume_input()
     output = JP_submit_button(resume_text, jd_title, jd_text, language)
     return output
