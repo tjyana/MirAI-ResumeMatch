@@ -53,8 +53,8 @@ def JP_jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                st.write(f'''求人内容： リンク入力 \n
-                         求人：{jd_title}''')
+                st.success(f'求人内容： リンク入力')
+                st.write('求人：{jd_title}')
                 return jd_title, jd_text
             except Exception as e:
                 st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
@@ -73,7 +73,7 @@ def JP_jd_input():
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.write("Match!をクリックしてください。")
+        st.success("入力を確認できました！Match!をクリックしてください。", icon ='✅')
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
