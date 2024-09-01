@@ -18,9 +18,11 @@ def main():
     # Display the final output
     if output:
         st.markdown(output, unsafe_allow_html=True)
-        st.write('Not happy with the results? Search for best fit jobs with this tool')
-        st.write('結果が微妙？このツールでベストフィットの求人を探そう！')
-        st.page_link('https://mf-jobmatch.streamlit.app/', label='JobMatch (for Money Forward jobs)')
+        st.write(' ')
+        st.write(' ')
+        st.warning('Not happy with the results? Search for best fit jobs with this tool')
+        st.warning('結果が微妙？このツールでベストフィットの求人を探そう！')
+        st.page_link('https://mf-jobmatch.streamlit.app/', label='👍JobMatch👍 (for Money Forward jobs)')
 
 if __name__ == "__main__":
     main()
