@@ -22,14 +22,13 @@ def JP_resume_input():
     # Input: Resume
     st.sidebar.header("レジュメ")
 
-    # Select input method: Copy and paste text or upload a file
+    # Select input method: File upload or Text
     resume_method = st.sidebar.radio("""履歴書の入力方法を選択""", ("ファイル", "テキスト"), horizontal = True)
 
     # Input: Text
     if resume_method == "テキスト":
         resume_text = st.sidebar.text_area("レジュメのテキストを入力")
         if resume_text:
-            # st.write('レジュメ内容：', resume_text[0:100] + '...')
             return resume_text
 
     # Input: File Upload
@@ -37,7 +36,6 @@ def JP_resume_input():
         resume_file = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
         if resume_file:
             resume_text = read_resume(resume_file)
-            # st.write('レジュメ内容：', resume_text[0:100] + '...')
             return resume_text
 
 
@@ -45,7 +43,7 @@ def JP_jd_input():
     # Input: Job Description
     st.sidebar.header("求人票")
 
-    # Select input method: Copy and paste text or upload a file
+    # Select input method: Link or Text
     jd_method = st.sidebar.radio("""求人内容の入力方法を選択""", ("求人URL", "テキスト"), horizontal = True)
 
     # Input: Link
@@ -54,7 +52,6 @@ def JP_jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                # st.write(f'求人：{jd_title}')
                 return jd_title, jd_text
             except Exception as e:
                 st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
@@ -65,7 +62,6 @@ def JP_jd_input():
         jd_text = st.sidebar.text_area("求人内容をテキスト入力")
         if jd_text:
             jd_title = "概要"
-            # st.write(f'求人：', jd_text[0:100] + '...')
             return jd_title, jd_text
 
     return None, None
@@ -73,9 +69,9 @@ def JP_jd_input():
 
 def JP_submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
-        st.toast("✅ 入力が確認できました！「Match!」をクリックしてください。")
         st.write(f'求人：{jd_title}')
         st.write('レジュメ内容：', resume_text[0:100] + '...')
+        st.toast("✅ 入力が確認できました！「Match!」をクリックしてください。")
     # Submit button
     if st.sidebar.button("Match!"):
         if jd_text is None:
