@@ -69,12 +69,20 @@ def jd_input():
 
 def submit_button(resume_text, jd_title, jd_text, language):
     if jd_text and resume_text:
+
+        # Job description preview
         if jd_title == "Summary":
             st.markdown('<b>Job Description: </b>', unsafe_allow_html=True)
             st.write(f'{jd_text[0:80]}...')
         else:
-            st.subheader(f'Job Description: {jd_title}')
-        st.subheader(f'Resume: {resume_text[0:80]}...')
+            st.markdown('<b>Job Description: </b>', unsafe_allow_html=True)
+            st.write(f'{jd_title}')
+
+        # Resume preview
+        st.markdown('<b>Resume: </b>', unsafe_allow_html=True)
+        st.write(f'{resume_text[0:80]}...')
+
+        # Confirmation message
         st.toast("✅Inputs confirmed! Click 'Match!' to proceed.")
 
     # Submit button
