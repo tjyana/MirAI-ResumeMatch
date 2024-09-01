@@ -38,6 +38,7 @@ def JP_resume_input():
         if resume_file:
             resume_text = read_resume(resume_file)
             st.warning(f'レジュメ： ファイルアップロード')
+            st.write(resume_text[0:20] + '...')
             return resume_text
 
 
@@ -54,7 +55,7 @@ def JP_jd_input():
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
-                st.success('求人内容： リンク入力')
+                st.warning('求人内容： リンク入力')
                 st.write(f'求人：{jd_title}')
                 return jd_title, jd_text
             except Exception as e:
@@ -66,7 +67,7 @@ def JP_jd_input():
         jd_text = st.sidebar.text_area("求人内容をテキスト入力")
         if jd_text:
             jd_title = "n/a"
-            st.write(f'求人内容： テキスト入力')
+            st.warning(f'求人内容： テキスト入力')
             return jd_title, jd_text
 
     return None, None
