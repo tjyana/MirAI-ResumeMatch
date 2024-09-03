@@ -40,8 +40,8 @@ def compare_resume(resume_text, jd_title, jd_text, language):
 
                     Please penalize heavily for any missing mandatory qualifications.
 
-                    please give warnings for items that are true:
-                    - Mandatory Qualifications warning: if if more 4 or more mandatory qualifications are missing: "Candidate may be missing mandatory qualifications. Please review carefully."
+                    please give warnings for items that are true. do not display if not true:
+                    - Mandatory Qualifications warning: if 4 or more mandatory qualifications are missing: "Candidate may be missing mandatory qualifications. Please review carefully."
                     - Overseas warning: if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
                     - Language Requirements warning: if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
