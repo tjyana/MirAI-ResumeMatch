@@ -12,7 +12,7 @@ Function requiring OpenAI API
 # Load OpenAI API key
 api_key = st.secrets['OPENAI_API_KEY']
 
-# @st.cache_data
+
 def compare_resume(resume_text, jd_title, jd_text, language):
     '''
 
