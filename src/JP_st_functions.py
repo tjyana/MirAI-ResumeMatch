@@ -85,7 +85,7 @@ def JP_submit_button(resume_text, jd_title, jd_text, language):
         st.toast("✅入力が確認できました！「Match!」をクリックしてください。")
 
     # Submit button
-    if st.sidebar.button("Match!"):
+    if st.sidebar.button("ResumeMatch!"):
         if jd_text is None:
             st.error('有効なマネーフォワードの求人内容を入力してください。')
         if resume_text is None:

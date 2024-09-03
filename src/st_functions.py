@@ -85,7 +85,7 @@ def submit_button(resume_text, jd_title, jd_text, language):
         st.toast("✅Inputs confirmed! Click 'Match!' to proceed.")
 
     # Submit button
-    if st.sidebar.button("Match!"):
+    if st.sidebar.button("ResumeMatch!"):
         if jd_text is None:
             st.error('Please enter a valid MoneyForward job description.')
         if resume_text is None:
