@@ -43,7 +43,7 @@ def compare_resume(resume_text, jd_title, jd_text, language):
 
                     If any of the conditionsa are true, please give warnings for the ones that are true:
                     - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
-                    - if resume does not mention a 4-year degree, bachelor's, master's, or PhD, or only mentions associate's degree and/or high school diploma: "Candidate may not have university degree. Highest education listed is [highest education listed]."
+                    - if resume does not mention a 4-year degree, bachelor's, master's, or PhD (or any of them in japanese), or only mentions associate's degree and/or high school diploma: "Candidate may not have university degree. Highest education listed is [highest education listed]."
                     - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
                     - if you cannot confirm candidate fulfills jd language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
