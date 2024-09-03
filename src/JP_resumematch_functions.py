@@ -24,7 +24,7 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
         client = OpenAI()
 
         completion = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system",
                 "content": "You are a tech recruiter screening resumes."
