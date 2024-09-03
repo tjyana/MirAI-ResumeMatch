@@ -41,11 +41,10 @@ def compare_resume(resume_text, jd_title, jd_text, language):
                     Please penalize heavily for any missing mandatory qualifications.
                     If the candidate is missing any mandatory qualifications, please also give a warning.
 
-                    If any of the conditionsa are true, please give warnings for the ones that are true:
-                    - if candidate is missing mandatory qualifications: "Candidate may be missing mandatory qualifications. Please review carefully."
-                    - if highest education listed on resume is associate's degree or high school diploma: "Candidate may not have university degree. Highest education listed is [highest education listed]."
-                    - if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
-                    - if you cannot confirm candidate fulfills jd language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
+                    please give warnings for the ones that are true:
+                    - Mandatory Qualifications warning: if if more 4 or more mandatory qualifications are missing: "Candidate may be missing mandatory qualifications. Please review carefully."
+                    - Overseas warning: if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
+                    - Language Requirements warning: if you cannot confirm candidate fulfills jd language requirements or if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
 
                     Output format should be as below, with each section title in large font.
                     Please fill in the blanks with the appropriate information.
@@ -56,10 +55,9 @@ def compare_resume(resume_text, jd_title, jd_text, language):
                     <h2>Estimated Match: [percentage]</h2>
 
                     <ul>
-                        <li>⚠️ (if mandatory qualifications are missing, give a warning here)</li>
-                        <li>⚠️ (if highest education listed on resume is associate's degree or high school diploma, give a warning here)</li>
-                        <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
-                        <li>⚠️ (if language requirements are not confirmed, give a warning here)</li>
+                        <li>⚠️ [Mandatory Qualifications warning]</li>
+                        <li>⚠️ [Overseas warning]</li>
+                        <li>⚠️ [Language Requirements warning]</li>
                     </ul>
 
                     <h4>Job Description Summary:</h5>
