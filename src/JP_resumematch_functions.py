@@ -43,7 +43,6 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
                     If any of the conditions are true, please give warnings for the ones that are true:
                     - Mandatory Qualifications warning: if 4 or more mandatory qualifications are missing: "必須資格を欠いている可能性があります。慎重にご確認ください。"
                     - Overseas warning: if candidate is outside of Japan, please give a warning: "海外にいる可能性があります。採用のタイムラインとビザの適用資格に注意してください。" (assume that their last place of work is their current location)
-                    - Language Requirements warning: if resume and job description are in different languages, please give a warning: "言語要件が確認されていません。進行する前に確認してください。"
 
 
                     Output format should be as below, with each section title in large font.
@@ -69,7 +68,6 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
                     <ul>
                         <li>⚠️ [Mandatory Qualifications warning if applicable]</li>
                         <li>⚠️ [Overseas warning if applicable]</li>
-                        <li>⚠️ [Language Requirements warning if applicable]</li>
                     </ul>
 
                     <h3>マッチ分析：</h3>
