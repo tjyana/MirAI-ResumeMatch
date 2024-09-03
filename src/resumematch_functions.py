@@ -57,7 +57,7 @@ def compare_resume(resume_text, jd_title, jd_text, language):
 
                     <ul>
                         <li>⚠️ (if mandatory qualifications are missing, give a warning here)</li>
-                        <li>⚠️ (if resume does not mention a bachelor, master, or PhD degree, or only mentions associate's degree and/or high school diploma, give a warning here)</li>
+                        <li>⚠️ (if resume does not mention a bachelor, master, or PhD degree, or only mentions associate's degree and/or high school diploma, give a warning here. If highest education listed is Bachelor of ____, do not display warning.)</li>
                         <li>⚠️ (if candidate is not in Japan, give a warning here)</li>
                         <li>⚠️ (if language requirements are not confirmed, give a warning here)</li>
                     </ul>
