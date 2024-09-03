@@ -40,10 +40,11 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
 
                     Please penalize heavily for any missing mandatory qualifications.
 
-                    please give warnings for items that are true. do not display if not true:
-                    - Mandatory Qualifications warning: if 4 or more mandatory qualifications are missing: "Candidate may be missing mandatory qualifications. Please review carefully."
-                    - Overseas warning: if candidate is outside of Japan, please give a warning: "Candidate may be overseas. Beware of hiring timelines and visa eligibility." (assume that their last place of work is their current location)
-                    - Language Requirements warning: if resume and job description are in different languages, please give a warning: "Language requirements are not confirmed. Please verify before proceeding."
+                    If any of the conditions are true, please give warnings for the ones that are true:
+                    - Mandatory Qualifications warning: if 4 or more mandatory qualifications are missing: "必須資格を欠いている可能性があります。慎重にご確認ください。"
+                    - Overseas warning: if candidate is outside of Japan, please give a warning: "海外にいる可能性があります。採用のタイムラインとビザの適用資格に注意してください。" (assume that their last place of work is their current location)
+                    - Language Requirements warning: if resume and job description are in different languages, please give a warning: "言語要件が確認されていません。進行する前に確認してください。"
+
 
                     Output format should be as below, with each section title in large font.
                     Please fill in the [] with the appropriate information.
@@ -51,12 +52,12 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
 
                     OUTPUT FORMAT:
 
-                    <h2>Estimated Match: [percentage]</h2>
+                    <h2>マッチ度 [percentage]</h2>
 
-                    <h4>Job Description Summary:</h5>
+                    <h4>求人内容の概要：</h5>
                     <p>{jd_title}: [One sentence summary of the job description.]</p>
 
-                    <h4>Resume Summary:</h5>
+                    <h4>履歴書の概要：</h5>
                     <ul>
                         <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
                         <li><b>Current location:</b> [current location] </li>
@@ -71,22 +72,23 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
                         <li>⚠️ [Language Requirements warning if applicable]</li>
                     </ul>
 
-                    <h3>Comparison Analysis:</h3>
+                    <h3>マッチ分析：</h3>
                     [reason why you gave the percentage]
 
-                    <h4>Qualifications:</h4>
+                    <h4>求めるスキル・経験：</h4>
                     <ul>
                         <li>[✅/❌] [Qualification 1]: [What you can tell from the resume]</li>
                         <li>[✅/❌] [Qualification 2]: [What you can tell from the resume]</li>
                         <li>etc.</li>
                     </ul>
 
-                    <h4>Nice-to-have:</h4>
+                    <h4>あると望ましいスキル・経験：</h4>
                     <ul>
                         <li>[✅/❌] [Nice-to-have 1]: [What you can tell from the resume]</li>
                         <li>[✅/❌] [Nice-to-have 2]: [What you can tell from the resume]</li>
                         <li>etc.</li>
                     </ul>
+
 
 
 
