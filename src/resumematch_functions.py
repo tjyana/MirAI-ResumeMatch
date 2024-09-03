@@ -24,7 +24,7 @@ def compare_resume(resume_text, jd_title, jd_text, language):
         client = OpenAI()
 
         completion = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system",
                 "content": "You are a tech recruiter screening resumes."
@@ -53,12 +53,6 @@ def compare_resume(resume_text, jd_title, jd_text, language):
 
                     <h2>Estimated Match: [percentage]</h2>
 
-                    <ul>
-                        <li>⚠️ [Mandatory Qualifications warning if applicable]</li>
-                        <li>⚠️ [Overseas warning if applicable]</li>
-                        <li>⚠️ [Language Requirements warning if applicable]</li>
-                    </ul>
-
                     <h4>Job Description Summary:</h5>
                     <p>{jd_title}: [One sentence summary of the job description.]</p>
 
@@ -69,6 +63,12 @@ def compare_resume(resume_text, jd_title, jd_text, language):
                         <li><b>Highest eduation:</b> [highest education listed] [</li>
                         <li><b>Japanese language ability:</b> [Japanese language ability discernible from resume] </li>
                         <li><b>English language ability:</b> [English language ability discernible from resume</li>
+                    </ul>
+
+                    <ul>
+                        <li>⚠️ [Mandatory Qualifications warning if applicable]</li>
+                        <li>⚠️ [Overseas warning if applicable]</li>
+                        <li>⚠️ [Language Requirements warning if applicable]</li>
                     </ul>
 
                     <h3>Comparison Analysis:</h3>
