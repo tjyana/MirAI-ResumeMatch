@@ -59,10 +59,10 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
                     <h4>履歴書の概要：</h5>
                     <ul>
                         <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
-                        <li><b>Current location:</b> [current location] </li>
-                        <li><b>Highest eduation:</b> [highest education listed] [</li>
-                        <li><b>Japanese language ability:</b> [Japanese language ability discernible from resume] </li>
-                        <li><b>English language ability:</b> [English language ability discernible from resume</li>
+                        <li><b>居住地:</b> [current location] </li>
+                        <li><b>最終学歴:</b> [highest education listed] [</li>
+                        <li><b>日本語能力:</b> [Japanese language ability discernible from resume] </li>
+                        <li><b>英語能力:</b> [English language ability discernible from resume</li>
                     </ul>
 
                     <ul>
