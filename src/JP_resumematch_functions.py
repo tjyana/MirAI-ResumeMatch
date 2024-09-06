@@ -53,12 +53,9 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
 
                     <h2>マッチ度 [percentage]</h2>
 
-                    <h4>求人内容の概要：</h5>
-                    <p>{jd_title}: [One sentence summary of the job description.]</p>
-
-                    <h4>履歴書の概要：</h5>
+                    <h4>履歴書：</h5>
                     <ul>
-                        <li>[Summary of the resume in one sentence. Please include years of experience if discernible.]</li>
+                        <li>概要：[Summary of the resume within 70 characters. Please include years of experience if discernible.]</li>
                         <li><b>居住地:</b> [current location] </li>
                         <li><b>最終学歴:</b> [highest education listed] [</li>
                         <li><b>日本語能力:</b> [Japanese language ability discernible from resume] </li>
