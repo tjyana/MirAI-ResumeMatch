@@ -40,7 +40,7 @@ def JP_compare_resume(resume_text, jd_title, jd_text, language):
 
                     Please penalize heavily for any missing mandatory qualifications.
 
-                    If any of the conditions are true, please give warnings for the ones that are true:
+                    please give warnings for items that are true. do not display if not true:
                     - Mandatory Qualifications warning: if 4 or more mandatory qualifications are missing: "必須資格を欠いている可能性があります。慎重にご確認ください。"
                     - Overseas warning: if candidate is outside of Japan, please give a warning: "海外にいる可能性があります。採用のタイムラインとビザの適用資格に注意してください。" (assume that their last place of work is their current location)
 
