@@ -56,8 +56,8 @@ def jd_input():
                 st.error("""Could not retrieve job information from the URL.
                          Please make sure the URL is for one JD from the Money Forward careers page: \n
                         Japanese: https://recruit.moneyforward.com/#job \n
-                        English: https://recruit.moneyforward.com/en/ \n
-                        URL format should be: https://moneyforward.com/careers/jobs/12345678
+        English: https://recruit.moneyforward.com/en/ \n
+        URL format should be: https://moneyforward.com/careers/jobs/12345678
                         """)
                 return None, None
 
