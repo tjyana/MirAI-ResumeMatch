@@ -49,7 +49,10 @@ def scrape_jd(url):
     English: https://recruit.moneyforward.com/en/ \n
     URL format should be: https://moneyforward.com/careers/jobs/12345678 \n
 
-                 無効なURLです。有効なマネーフォワードの求人URLを入力してください。\n 日本語: https://recruit.moneyforward.com/#job \n 英語: https://recruit.moneyforward.com/en/ \n URL形式: https://moneyforward.com/careers/jobs/12345678 \n
+                 無効なURLです。マネーフォワード採用ページの求人URLを入力してください。\n
+                 日本語: https://recruit.moneyforward.com/#job \n
+                 英語: https://recruit.moneyforward.com/en/ \n
+                 URL形式: https://moneyforward.com/careers/jobs/12345678 \n
                  ''')
 
     # Else, scrape the job description
