@@ -47,7 +47,7 @@ def jd_input():
 
     # Input: Link
     if jd_method == "JD Link":
-        jd_link = st.sidebar.text_input("""Enter JD link
+        jd_link = st.sidebar.text_input("""Enter JD link \n
                                         (MoneyForward job description)""")
         if jd_link:
             try:
