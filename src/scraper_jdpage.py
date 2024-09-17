@@ -45,14 +45,20 @@ def scrape_jd(url):
     if 'hrmos.co/pages/moneyforward/jobs/' not in url:
         st.error('''\n
                 Invalid URL. Please make sure the URL is for one JD from the Money Forward careers page: \n
-                Japanese: https://recruit.moneyforward.com/#job \n
-                English: https://recruit.moneyforward.com/en/ \n
-                URL format should be: https://moneyforward.com/careers/jobs/12345678 \n
+                Japanese page: https://recruit.moneyforward.com/#job \n
+                English page: https://recruit.moneyforward.com/en/ \n
+                \n
+                The correct format of the URL is: \n
+                https://moneyforward.com/careers/jobs/{job_id}\n
+                where {job_id} is a placeholder for a series of numbers.\n
                 ------------------------------ \n
                 無効なURLです。マネーフォワード採用ページの求人URLを入力してください。\n
-                日本語: https://recruit.moneyforward.com/#job \n
-                英語: https://recruit.moneyforward.com/en/ \n
-                URL形式: https://moneyforward.com/careers/jobs/12345678 \n
+                日本語採用ページ: https://recruit.moneyforward.com/#job \n
+                英語採用ページ: https://recruit.moneyforward.com/en/ \n
+                \n
+                こちらのURLの正しい形式は以下の通りです: \n
+                https://moneyforward.com/careers/jobs/{job-id}
+                {job-id} は一連の数字を表すプレースホルダーです \n
                  ''')
 
     # Else, scrape the job description
