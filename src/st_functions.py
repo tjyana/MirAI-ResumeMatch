@@ -47,7 +47,8 @@ def jd_input():
 
     # Input: Link
     if jd_method == "JD Link":
-        jd_link = st.sidebar.text_input("Enter JD link")
+        jd_link = st.sidebar.text_input("""Enter JD link
+                                        (MoneyForward job description)""")
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
