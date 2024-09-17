@@ -13,9 +13,14 @@ ResumeMatch simplifies the hiring process by comparing a resume to a job descrip
 
 ## How to Use
 
-### Requirements:
-- A resume (PDF, DOC, or text format)
-- A job description (text format)
+### What you need:
+- A resume (PDF/DOC upload OR text input)
+  - You can generate one with ChatGPT
+- A job description (link OR text input)
+  - For link input: please choose a job description from the Money Forward Careers Website
+    - Full website (Japanese): https://recruit.moneyforward.com/#job
+    - English listings: https://hrmos.co/pages/moneyforward/jobs?category=1707294702136684546
+      (Make sure it is one job listing. URL should look like: https://hrmos.co/pages/moneyforward/jobs/(numbers))
 
 ### Steps:
 1. **Choose an Input Method for the Resume:**
