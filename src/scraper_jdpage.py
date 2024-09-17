@@ -44,8 +44,12 @@ def scrape_jd(url):
     # Error handling for invalid URLs
     if 'hrmos.co/pages/moneyforward/jobs/' not in url:
         st.error('''\n
-                 Invalid URL. Please enter a valid MoneyForward job description.\n
-                 無効なURLです。有効なマネーフォワードの求人内容を入力してください。
+                 Invalid URL. Please make sure the URL is for one JD from the Money Forward careers page: \n
+                Japanese: https://recruit.moneyforward.com/#job \n
+    English: https://recruit.moneyforward.com/en/ \n
+    URL format should be: https://moneyforward.com/careers/jobs/12345678 \n
+
+                 無効なURLです。有効なマネーフォワードの求人URLを入力してください。\n 日本語: https://recruit.moneyforward.com/#job \n 英語: https://recruit.moneyforward.com/en/ \n URL形式: https://moneyforward.com/careers/jobs/12345678 \n
                  ''')
 
     # Else, scrape the job description
