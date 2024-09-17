@@ -54,7 +54,11 @@ def jd_input():
                 return jd_title, jd_text
             except Exception as e:
                 st.error("""Could not retrieve job information from the URL.
-                         Please make sure the URL is for one JD from the Money Forward careers page.""")
+                         Please make sure the URL is for one JD from the Money Forward careers page: \n
+                        - Japanese: https://recruit.moneyforward.com/#job \n
+                        - English: https://recruit.moneyforward.com/en/ \n
+                        URL format should be: https://moneyforward.com/careers/jobs/123456
+                        """)
                 return None, None
 
     # Input: Text
