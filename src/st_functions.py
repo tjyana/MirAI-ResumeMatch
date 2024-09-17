@@ -47,14 +47,14 @@ def jd_input():
 
     # Input: Link
     if jd_method == "JD Link":
-        jd_link = st.sidebar.text_input("""Enter JD link \n
-                                        (MoneyForward job description)""")
+        jd_link = st.sidebar.text_input("""Enter JD link (Money Forward job description)""")
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
                 return jd_title, jd_text
             except Exception as e:
-                st.error("Could not retrieve job information from the URL. Please check the URL.")
+                st.error("""Could not retrieve job information from the URL.
+                         Please make sure the URL is for one JD from the Money Forward careers page.""")
                 return None, None
 
     # Input: Text
