@@ -18,14 +18,16 @@ ResumeMatch simplifies the hiring process by comparing a resume to a job descrip
   - You can generate one with ChatGPT
 - A job description (link OR text input)
   - For link input: please choose a job description from the Money Forward Careers Website
-    - Full website (Japanese): https://recruit.moneyforward.com/#job
-    - English listings: https://hrmos.co/pages/moneyforward/jobs?category=1707294702136684546
+    - Japanese: https://recruit.moneyforward.com/#job
+    - English: https://recruit.moneyforward.com/en/
       (Make sure it is one job listing. URL should look like: https://hrmos.co/pages/moneyforward/jobs/(numbers))
 
 ### Steps:
 1. **Choose an Input Method for the Resume:**
    - **File:** Upload your resume in PDF or DOC format.
    - **Text:** Copy and paste the resume text.
-2. **Input the Job Description:** Copy and paste the job description text.
+2. **Input the Job Description:**
+   - **Link:** Copy an appropriate link from Money Forward Careers website.
+   - **Text:** Copy and paste the job description text.
 3. **Submit:** Click 'Submit' and wait a few seconds for the analysis.
 4. **Review Your Results:** Explore the match percentage, comparison analysis, and more.
