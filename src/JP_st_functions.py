@@ -22,7 +22,7 @@ def JP_resume_input():
     st.sidebar.header("レジュメ")
 
     # Select input method: File upload or Text
-    resume_method = st.sidebar.radio("""レジュメの入力方法を選択""", ("ファイル", "テキスト"), horizontal = True)
+    resume_method = st.sidebar.radio("""レジュメの入力方法を選択""", ("ファイル", "テキスト"), horizontal = True, help="レジュメがない場合はChatGPTで作成し、テキスト入力してください🙏")
 
     # Input: Text
     if resume_method == "テキスト":
@@ -47,18 +47,19 @@ def JP_jd_input():
 
     # Input: Link
     if jd_method == "求人URL":
-        jd_link = st.sidebar.text_input("求人票のURLを入力(マネーフォワードの求人内容)")
+        jd_link = st.sidebar.text_input("求人票のURLを入力(マネーフォワードの求人URLのみ対応可能)", help="マネーフォワードの採用ページから求人URLを入力してください：https://recruit.moneyforward.com/#job")
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
                 return jd_title, jd_text
             except Exception as e:
-                st.error("URLから求人情報を取得できませんでした。URLを確認してください。")
+                st.error("""URLから求人情報を取得できませんでした。URLを確認してください。
+                         """)
                 return None, None
 
     # Input: Text
     elif jd_method == "テキスト":
-        jd_text = st.sidebar.text_area("求人内容をテキスト入力", help="レジュメがない場合はChatGPTで作成し、テキスト入力してください🙏")
+        jd_text = st.sidebar.text_area("求人内容をテキスト入力", help="マネーフォワードの求人以外も入力可能です。")
         if jd_text:
             jd_title = "概要"
             return jd_title, jd_text

@@ -47,7 +47,7 @@ def jd_input():
 
     # Input: Link
     if jd_method == "JD Link":
-        jd_link = st.sidebar.text_input("""Enter JD link (Money Forward job description)""")
+        jd_link = st.sidebar.text_input("""Enter JD link (Money Forward JD URL only)""", help="Please input a JD URL from Money Forward careers page: https://recruit.moneyforward.com/en/")
         if jd_link:
             try:
                 jd_title, jd_text = scrape_jd(jd_link)
@@ -59,7 +59,7 @@ def jd_input():
 
     # Input: Text
     elif jd_method == "Text":
-        jd_text = st.sidebar.text_area("Enter JD text")
+        jd_text = st.sidebar.text_area("Enter JD text", help="You can input any job description text.")
         if jd_text:
             jd_title = "Summary"
             return jd_title, jd_text
