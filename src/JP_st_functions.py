@@ -22,7 +22,7 @@ def JP_resume_input():
     st.sidebar.header("レジュメ")
 
     # Select input method: File upload or Text
-    resume_method = st.sidebar.radio("""履歴書の入力方法を選択""", ("ファイル", "テキスト"), horizontal = True, help="履歴書がない場合はChatGPTで作成し、テキスト入力してください🙏")
+    resume_method = st.sidebar.radio("""レジュメの入力方法を選択""", ("ファイル", "テキスト"), horizontal = True)
 
     # Input: Text
     if resume_method == "テキスト":
@@ -32,7 +32,7 @@ def JP_resume_input():
 
     # Input: File Upload
     elif resume_method == "ファイル":
-        resume_file = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"])
+        resume_file = st.sidebar.file_uploader("レジュメファイルをアップロード", type=["pdf", "docx", "txt"], help="レジュメがない場合はChatGPTで作成し、テキスト入力してください🙏")
         if resume_file:
             resume_text = read_resume(resume_file)
             return resume_text
