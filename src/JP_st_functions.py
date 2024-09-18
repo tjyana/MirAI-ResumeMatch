@@ -58,7 +58,7 @@ def JP_jd_input():
 
     # Input: Text
     elif jd_method == "テキスト":
-        jd_text = st.sidebar.text_area("求人内容をテキスト入力")
+        jd_text = st.sidebar.text_area("求人内容をテキスト入力", help="レジュメがない場合はChatGPTで作成し、テキスト入力してください🙏")
         if jd_text:
             jd_title = "概要"
             return jd_title, jd_text

@@ -22,7 +22,7 @@ def resume_input():
     st.sidebar.header("Resume")
 
     # Select input method: Copy and paste text or upload a file
-    resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True)
+    resume_method = st.sidebar.radio("""Choose Resume input method:""", ("File", "Text"), horizontal = True, help="If you need a resume, please generate with ChatGPT and input by text 🙏")
 
     # Input: Text
     if resume_method == "Text":
@@ -32,7 +32,7 @@ def resume_input():
 
     # Input: File Upload
     elif resume_method == "File":
-        resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"])
+        resume_file = st.sidebar.file_uploader("Upload Resume file", type=["pdf", "docx", "txt"], help="If you need a resume, please generate with ChatGPT and input by text 🙏")
         if resume_file:
             resume_text = read_resume(resume_file)
             return resume_text
